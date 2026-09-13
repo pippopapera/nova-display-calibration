@@ -1,20 +1,16 @@
 # Maintainer publication notes
 
-The repository content is prepared locally. No GitHub repository, push, or public release was created by the preparation workflow.
+Repository: [pippopapera/nova-display-calibration](https://github.com/pippopapera/nova-display-calibration).
 
-Suggested repository name: **nova-display-calibration**
+This directory contains the APK release procedure and prepared release notes. The source repository and a downloadable, signed APK are separate publication steps. The first signed APK release is still being prepared.
 
-Suggested description:
-
-> Measured SDR display calibration for Retroid Pocket Nova, with native profile persistence and no background service.
-
-Create an empty repository under `pippopapera`. Leave GitHub's README, `.gitignore`, and license initialization options off because the local repository supplies them. MIT is the prepared license for project code and original calibration data; review it before publishing. Third-party artwork in photos is excluded from that grant.
+The project code and original calibration data use MIT. Third-party artwork in the comparison photographs is excluded from that grant.
 
 ## Source publication
 
-1. Review the README, license, compatibility limits, and comparison images.
-2. Add the newly created repository URL as the local `origin` remote.
-3. Push the local `main` branch using the owner's authenticated Git setup.
+1. Review source changes, public documentation, compatibility limits, and validation evidence.
+2. Commit the reviewed files, keeping private artifacts excluded.
+3. Push `main` to the repository above using the owner's authenticated Git setup.
 
 No account credentials, private key, firmware copy, device serial, GPS metadata, personal-summary file, or test APK belongs in the commit.
 

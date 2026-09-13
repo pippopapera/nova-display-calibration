@@ -2,6 +2,10 @@
 
 **Measured SDR color profiles for the Retroid Pocket Nova. Applied once, loaded by the display system at boot.**
 
+[**Download v0.4.0 APK**](https://github.com/pippopapera/nova-display-calibration/releases/download/v0.4.0/Nova-Display-Calibration-0.4.0.apk) · [Release notes and SHA-256](https://github.com/pippopapera/nova-display-calibration/releases/tag/v0.4.0)
+
+A project by **pippopapera**, developed with substantial assistance from **OpenAI Codex**. [Contributors and the role of AI](CONTRIBUTORS.md).
+
 The goal is a more accurate sRGB image, with a D65 white point and a measured tone response. This is a colorimeter-based alternative to adjusting saturation by eye. Choose **Gamma 2.2** or **sRGB**, restart, and use the console normally. The app does not run a background service to keep the calibration active.
 
 **Compatibility:** validated on one Retroid Pocket Nova running `RPN_V1.0.0.436_20260722_083524_user`, with panel identifier `il97680a_amoled_panel_without_DSC`. The installer checks both the firmware build and the original panel configuration checksum. Other units may differ; other firmware and handheld models are unsupported.
@@ -37,7 +41,7 @@ Both are compared with the same sRGB/D65/Gamma 2.2 target, normalized to each pr
 
 ## Daily use
 
-1. Install the APK from this repository's **Releases** when a signed release is available, then open **Nova Calibration**.
+1. Download the signed APK from [Releases](https://github.com/pippopapera/nova-display-calibration/releases/tag/v0.4.0). Allow installation from your browser or file manager if Android asks, install it, then open **Nova Calibration**.
 2. Choose **Gamma 2.2 · recommended** or **sRGB**.
 3. Press **Restart device** when requested. A full restart is needed after an actual profile change.
 4. Use your console normally. You can close the app and change the brightness.
@@ -77,7 +81,7 @@ This project does not claim to have proven or universally fixed “color crush,�
 
 ## Development and credits
 
-Source, profile deltas, measurement exports, and checks are provided for inspection. Development used AI assistance; the hardware measurements and recorded validation results are the basis for the claims. Corrections and independent measurements are welcome. [Contributing](CONTRIBUTING.md).
+Source, profile deltas, measurement exports, and checks are provided for inspection. **OpenAI Codex** contributed to implementation, measurement analysis, device verification, and documentation. The hardware measurements and recorded validation results are the basis for the claims. [Contributors](CONTRIBUTORS.md) explains those roles; corrections and independent measurements are welcome. [Contributing](CONTRIBUTING.md).
 
 Thanks to the handheld community for documenting the color issue, to the OdinTools project for documenting the OEM service interface, and to ArgyllCMS for the measurement tools. [Third-party notes](THIRD_PARTY.md).
 

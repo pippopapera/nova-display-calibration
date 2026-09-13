@@ -1,0 +1,10 @@
+{
+  "capture": "release-signed-gamma22-after-boot-drm.txt",
+  "reference_profile": "gamma22",
+  "IGC_exact_match": true,
+  "GC_exact_match": true,
+  "PCC_exact_match": true,
+  "HSIC_neutral": true,
+  "display_active": true,
+  "verified": true
+}

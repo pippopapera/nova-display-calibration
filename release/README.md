@@ -2,7 +2,7 @@
 
 Repository: [pippopapera/nova-display-calibration](https://github.com/pippopapera/nova-display-calibration).
 
-This directory contains the APK release procedure and prepared release notes. The source repository and a downloadable, signed APK are separate publication steps. The first signed APK release is still being prepared.
+This directory contains the APK release procedure and release notes. The first public signed APK is [v0.4.0](https://github.com/pippopapera/nova-display-calibration/releases/tag/v0.4.0). Its certificate fingerprint is recorded in [the release notes](v0.4.0.md) and [signature verification output](../docs/verification/release-signing-certificate.txt).
 
 The project code and original calibration data use MIT. Third-party artwork in the comparison photographs is excluded from that grant.
 
@@ -16,10 +16,10 @@ No account credentials, private key, firmware copy, device serial, GPS metadata,
 
 ## Signed APK release
 
-1. Create or choose a dedicated private signing key outside the repository and back it up securely.
+1. Use the established private release signing key outside the repository and keep a secure backup. Do not generate a new identity for a routine update.
 2. Build using the external signing parameters in [BUILDING.md](../docs/BUILDING.md), then rerun the compiled-APK audit.
-3. Verify the APK/certificate digests and install the signed artifact for a final smoke test. The local lab installation uses a different key: restore the original profile and reboot before replacing it.
-4. Update the signing status in the verification/release records. Attach the signed APK and `SHA256SUMS.txt` to release **v0.4.0**, using [the prepared release notes](v0.4.0.md).
-5. Make the release public only after those artifact checks. The current `-TestBuild` APK is a candidate, not the public distribution.
+3. Verify the APK/certificate digests and install the signed artifact for a final smoke test. When migrating from a different laboratory key, restore the original profile and reboot before uninstalling the old APK.
+4. Update verification records and release notes for the new version. Attach the signed APK and `SHA256SUMS.txt` to its tagged release. See [v0.4.0](v0.4.0.md) for the initial format.
+5. Make the release public only after those artifact checks. Never upload a `-TestBuild` APK as an official release.
 
 The signature affects APK updates and publisher identity; it does not alter calibration data. Keep the measured profile hashes unchanged unless a new measurement campaign justifies a change.

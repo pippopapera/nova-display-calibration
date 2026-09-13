@@ -1,0 +1,92 @@
+{
+  "version": "0.4.0",
+  "date": "2026-09-13",
+  "status": "passed",
+  "firmware": "RPN_V1.0.0.436_20260722_083524_user",
+  "scope": "One supported physical Nova; signing and device verification, not new optical measurements.",
+  "apk_sha256": "7ee25693246df145bd3c892ea67a61bc98beaf5a3cdbd5fb09035fa5dbf1a371",
+  "apk_bytes": 74903,
+  "signing": {
+    "identity": "dedicated public release key",
+    "key_type": "RSA-4096",
+    "certificate_sha256": "f6c76258cf877435f5f1e453569ec131f92f6c284f7fa99783360a7aa10cca34",
+    "v2_verified": true,
+    "v3_verified": true,
+    "evidence": "release-signing-certificate.txt"
+  },
+  "candidate_comparison": {
+    "candidate_apk_sha256": "b407704d253fa541758031b5b2bbb27a900454ac1210a0a389d214777e8e762f",
+    "non_signature_zip_entries": 13,
+    "all_entry_contents_identical": true,
+    "candidate_device_evidence": "device-validation.json"
+  },
+  "migration": "Restored original with laboratory app, rebooted and checked hardware, uninstalled it, freshly installed the public APK.",
+  "installed_apk_byte_identical": true,
+  "full_reboots_confirmed": 4,
+  "profile_operations_via_normal_app_ui": [
+    "srgb",
+    "original",
+    "gamma22"
+  ],
+  "profile_operation_log_errors": 0,
+  "tests": [
+    {
+      "test": "old original",
+      "profile": "original",
+      "passed": true,
+      "hardware_evidence": "release-signed-old-original-drm.verification.json",
+      "app_services_absent": true,
+      "surfaceflinger_identity": true
+    },
+    {
+      "test": "srgb after boot",
+      "profile": "srgb",
+      "passed": true,
+      "hardware_evidence": "release-signed-srgb-after-boot-drm.verification.json",
+      "app_services_absent": true,
+      "surfaceflinger_identity": true
+    },
+    {
+      "test": "original after boot",
+      "profile": "original",
+      "passed": true,
+      "hardware_evidence": "release-signed-original-after-boot-drm.verification.json",
+      "app_services_absent": true,
+      "surfaceflinger_identity": true
+    },
+    {
+      "test": "gamma22 after boot",
+      "profile": "gamma22",
+      "passed": true,
+      "hardware_evidence": "release-signed-gamma22-after-boot-drm.verification.json",
+      "app_services_absent": true,
+      "surfaceflinger_identity": true
+    },
+    {
+      "test": "force stop wake",
+      "profile": "gamma22",
+      "passed": true,
+      "hardware_evidence": "release-signed-force-stop-wake-drm.verification.json",
+      "app_services_absent": true,
+      "surfaceflinger_identity": true
+    }
+  ],
+  "force_stopped_app_remained_absent_after_wake": true,
+  "final_state": {
+    "brightness": "173",
+    "brightness_mode": "0",
+    "screen_timeout_ms": "60000",
+    "stay_awake": "0",
+    "lock_disabled": "false",
+    "system_saturation": "1.0",
+    "app_process_absent": true,
+    "display_asleep": true,
+    "temporary_files_removed": true
+  },
+  "app_locale_override_cleared": true,
+  "harness_notes": [
+    "The old app sometimes had no UI hierarchy; fresh screenshots were inspected before coordinate-based clicks. The new installation exposed a usable UI hierarchy.",
+    "A boot check ran before Android reported completion, and one post-boot diagnostic command returned a nonzero exit. Neither attempt counted as a pass. Later completed boot checks and fresh successful hardware captures are the evidence above.",
+    "The OEM USB chooser was dismissed when observed. Temporary laboratory probes were removed; they are not part of the release APK."
+  ]
+}

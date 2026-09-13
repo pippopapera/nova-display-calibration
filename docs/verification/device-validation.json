@@ -1,6 +1,6 @@
 {
   "version": "0.4.0",
-  "signing": "local test key; release signing pending",
+  "signing": "historical local test candidate; public signed artifact is validated in release-signature-validation.json",
   "tests": [
     {
       "test": "Gamma reconstruction on device; repeated selection preserves brightness",

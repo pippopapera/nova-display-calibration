@@ -30,7 +30,7 @@ Full-screen patches were selected to avoid sensor-position ambiguity on a small 
 | Final white confirmation | 3 |
 | **Total** | **921** |
 
-Earlier pilot measurements, failed attempts, and covered-screen samples are excluded. The CSV exports the original recorded RGB/XYZ numbers, removing computer paths and device identifiers. Version 0.4 changes packaging and reconstructs the same calibrated payloads; it does not add new optical readings to this count.
+Earlier pilot measurements, failed attempts, and covered-screen samples are excluded. The CSV exports the original recorded RGB/XYZ numbers, removing computer paths and device identifiers. The public app reconstructs the same calibrated payloads; packaging and version changes do not add new optical readings to this count.
 
 ## Original versus calibrated saturated colors
 

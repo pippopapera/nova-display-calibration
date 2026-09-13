@@ -1,0 +1,35 @@
+{
+  "version": "1.0.0",
+  "version_code": 5,
+  "status": "passed",
+  "date": "2026-09-13",
+  "scope": "Version metadata and in-place update checks; no new optical measurements or hardware readback campaign.",
+  "previous_version": "0.4.0",
+  "previous_device_validation": "release-signature-validation.json",
+  "apk_sha256": "fff473ae14aa16b5b8a7647ba17cf2c69e1ad24f1acc167f97c6ea99fa054e7a",
+  "apk_bytes": 74902,
+  "signing_certificate_sha256": "f6c76258cf877435f5f1e453569ec131f92f6c284f7fa99783360a7aa10cca34",
+  "same_public_signing_identity": true,
+  "signature_v2_v3_verified": true,
+  "decoder_tests_passed": 21,
+  "changed_zip_entries_excluding_signature": [
+    "AndroidManifest.xml"
+  ],
+  "manifest_changes_only": [
+    "versionName: 0.4.0 -> 1.0.0",
+    "versionCode: 4 -> 5"
+  ],
+  "code_resources_and_calibration_assets_identical": true,
+  "in_place_update_without_uninstall": true,
+  "installed_apk_byte_identical": true,
+  "app_launch_successful": true,
+  "stored_gamma22_status_unchanged": true,
+  "profile_reapplication_or_reboot_needed": false,
+  "app_services_absent": true,
+  "app_force_stopped": true,
+  "final_brightness": 173,
+  "final_lock_enabled": true,
+  "final_screen_timeout_ms": 60000,
+  "final_display_asleep": true,
+  "temporary_probe_removed": true
+}

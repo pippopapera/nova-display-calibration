@@ -36,7 +36,7 @@ The original `/vendor` file is never replaced. The compositor chooses the overri
 
 ## Calibration-only distribution
 
-The original laboratory APK bundled full reconstructed QDCM JSON files. Version 0.4 distributes only binary `.npatch` deltas, avoiding redistribution of the manufacturer's configuration.
+The original laboratory APK bundled full reconstructed QDCM JSON files. The public app distributes only binary `.npatch` deltas, avoiding redistribution of the manufacturer's configuration.
 
 The `NOVAPCH1` format is deliberately narrow. It addresses eight known fields in this exact, checksummed firmware file: IGC, GC, PCC and PA in NATIVE and sRGB. Each field is decoded from its byte-swapped hexadecimal representation. Bounded operations either copy existing bytes or insert original calibration values. The field is then re-encoded. The verified factory formatting is normalized to the frozen measured output's formatting, including its CRLF line endings.
 

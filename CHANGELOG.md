@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.0 — 2026-09-13
+
+- Use 1.0.0 as the public release version. Calibration, app behavior, translations, and signing identity are unchanged from 0.4.0.
+- Increase Android version code to 5 so existing 0.4.0 installations can update in place.
+
 ## 0.4.0 — 2026-09-13
 
 - Package calibration-only deltas and reconstruct the verified measured profiles from the console's existing factory configuration. No manufacturer configuration is bundled.

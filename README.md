@@ -2,7 +2,7 @@
 
 **Measured SDR color profiles for the Retroid Pocket Nova. Applied once, loaded by the display system at boot.**
 
-[**Download v0.4.0 APK**](https://github.com/pippopapera/nova-display-calibration/releases/download/v0.4.0/Nova-Display-Calibration-0.4.0.apk) · [Release notes and SHA-256](https://github.com/pippopapera/nova-display-calibration/releases/tag/v0.4.0)
+[**Download v1.0.0 APK**](https://github.com/pippopapera/nova-display-calibration/releases/download/v1.0.0/Nova-Display-Calibration-1.0.0.apk) · [Release notes and SHA-256](https://github.com/pippopapera/nova-display-calibration/releases/tag/v1.0.0)
 
 A project by **pippopapera**, developed with substantial assistance from **OpenAI Codex**. [Contributors and the role of AI](CONTRIBUTORS.md).
 
@@ -41,7 +41,7 @@ Both are compared with the same sRGB/D65/Gamma 2.2 target, normalized to each pr
 
 ## Daily use
 
-1. Download the signed APK from [Releases](https://github.com/pippopapera/nova-display-calibration/releases/tag/v0.4.0). Allow installation from your browser or file manager if Android asks, install it, then open **Nova Calibration**.
+1. Download the signed APK from [Releases](https://github.com/pippopapera/nova-display-calibration/releases/tag/v1.0.0). Allow installation from your browser or file manager if Android asks, install it, then open **Nova Calibration**.
 2. Choose **Gamma 2.2 · recommended** or **sRGB**.
 3. Press **Restart device** when requested. A full restart is needed after an actual profile change.
 4. Use your console normally. You can close the app and change the brightness.

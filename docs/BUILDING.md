@@ -54,8 +54,9 @@ python tools/generate-profile-patches.py --factory C:\private\panel-factory.json
 - Production decoder: valid byte-exact reconstruction, real private profile fixtures, malformed inputs, truncated data, bounds, unexpected fields/opcodes, and wrong checksums.
 - Compiled APK: zero permissions; one launcher; no services, receivers, providers, network clients or native libraries; only the expected calibration assets; complete localization keys/placeholders.
 - Actual device, local candidate: profile changes through the normal app UI, full reboot, original-profile restore, brightness preservation on repeated selection, and persistence with the app force-stopped through sleep/wake. See the [candidate device report](verification/device-validation.json).
-- Public signed APK: identical non-signature ZIP entry contents, fresh installation after restoring/removing the laboratory build, and repeated profile/reboot/restore/persistence checks. See the [release validation](verification/release-signature-validation.json) and [certificate verification](verification/release-signing-certificate.txt).
-- Earlier optical campaign: 921 recorded readings. Version 0.4 reconstructs the same profile bytes; packaging changes do not constitute new optical readings.
+- Public signed 0.4.0 APK: identical non-signature ZIP entry contents, fresh installation after restoring/removing the laboratory build, and repeated profile/reboot/restore/persistence checks. See the [0.4.0 release validation](verification/release-signature-validation.json).
+- Version 1.0.0: version metadata change with the same signing identity, code, resources, and calibration assets. See the [1.0.0 update validation](verification/release-1.0.0-validation.json) and [certificate verification](verification/release-signing-certificate.txt).
+- Earlier optical campaign: 921 recorded readings. The public app reconstructs the same profile bytes; packaging and version changes do not constitute new optical readings.
 
 [APK inspection](verification/apk-audit.json) · [Decoder test log](verification/profile-reconstruction-tests.txt) · [Measurement report](MEASUREMENTS.md)
 

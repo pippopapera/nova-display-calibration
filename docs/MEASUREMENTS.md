@@ -12,7 +12,7 @@
 | Color target | SDR, sRGB primaries, D65 |
 | Tone targets | Gamma 2.2 and sRGB, each assessed against its own response |
 | Reference brightness | Android 173/255, approximately 68% of the tested slider |
-| Reference white | Approximately 225 cd/m² |
+| Reference white | Approximately 225 cd/m² at the reference slider setting; not a brightness cap |
 | Patches | Full-screen, 1280 × 960; one-second settling interval |
 | System saturation | 100% in the original and calibrated comparisons |
 
@@ -36,12 +36,16 @@ Earlier pilot measurements, failed attempts, and covered-screen samples are excl
 
 The 36 color patches cover six ramps starting at full red, green, blue, cyan, magenta, and yellow. Initially zero channels are increased through codes 0, 16, 32, 48, 64, and 96 while the other channels stay at 255. Each run also includes start/end white and black.
 
+**Both runs used the same Android brightness setting, 173/255 (approximately 68% of the slider).** The white luminances in this comparison are reference-setting measurements, not measurements at maximum brightness.
+
 | Measurement | Original | Gamma 2.2 |
 |---|---:|---:|
 | Mean ΔE00, 36 colors | 5.766 | 0.626 |
 | Maximum ΔE00 | 8.687 | 1.071 |
-| Mean white luminance, cd/m² | 250.681 | 224.969 |
+| Mean white at brightness 173/255, cd/m² | 250.681 | 224.969 |
 | Nearly identical adjacent pairs under the stated criterion | 0/30 | 0/30 |
+
+**The calibration has a real brightness cost:** at this unchanged slider setting, the calibrated white emits about **10.3% less light** than the original white. This reduction results from the RGB color and white-point correction. It is not a uniform 10.3% reduction established for every color, signal level, or slider position.
 
 Both profiles use the same sRGB/D65/Gamma 2.2 target. Targets are scaled to the mean measured white luminance of each run, without adapting away white chromaticity error or subtracting black. A near-identical pair was defined descriptively as measured adjacent ΔE00 below 0.1 while the target difference is at least 0.5. This is not a statistically established clipping threshold.
 
@@ -70,9 +74,13 @@ Near-black codes represent different physical luminances under the two curves. A
 
 ## Brightness sweep
 
+**Every row below was measured with Gamma 2.2 calibration active.** The approximately 225 cd/m² reference is not a brightness limit: at **100% slider, calibrated full-screen white measured 612.975 cd/m²**. The app does not impose a 225-nit cap or reduce the slider's available range. Applying a different profile sets the reference slider position; you can then raise or lower it normally.
+
+This sweep contains no original-profile measurement at 100%, so it does **not quantify the loss of maximum brightness** compared with the original profile. The 10.3% loss measured at the reference setting must not be presented as a measured loss at maximum brightness. These full-screen SDR white readings are also distinct from peak HDR or small-window specifications.
+
 Each setting used 60 full-screen patches: 41 colors, 16 grays, start/end white, and black. Gamma was fitted through normalized white using gray codes 32–224. Targets were scaled to each setting's measured white luminance; chromaticity remained D65.
 
-| Slider | Android | White cd/m² | Fitted gamma | Mean / maximum color ΔE00 |
+| Slider | Android brightness | Calibrated white, cd/m² | Fitted gamma | Mean / maximum color ΔE00 |
 |---|---:|---:|---:|---:|
 | Reference, approximately 68% | 173 | 224.914 | 2.213 | 0.482 / 0.943 |
 | 0% | 1 | 1.782 | 2.176 | 1.139 / 2.968 |

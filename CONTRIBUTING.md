@@ -1,4 +1,4 @@
-# Contributing
+# How to contribute
 
 Independent measurements and reproducible bug reports are welcome.
 

@@ -1,4 +1,6 @@
-# Contributors
+# Contributors and credits
+
+This page records who contributed to the project and what they did. To help with the project, see [How to contribute](CONTRIBUTING.md).
 
 ## pippopapera — project owner and maintainer
 

@@ -48,6 +48,8 @@ Both are compared with the same sRGB/D65/Gamma 2.2 target, normalized to each pr
 
 The reference is **about 225 cd/m² at Android brightness 173/255**, approximately 68% on the tested slider. Applying a different profile sets this reference brightness; selecting the current profile again preserves your brightness. The brightness sweep retained the correction, with estimated gamma around **2.18–2.22**. Accuracy varies somewhat with brightness, especially close to black at the lowest setting.
 
+**Calibration reduces light output at the same slider setting:** at approximately 68%, white measured 250.7 cd/m² originally and 225.0 cd/m² calibrated, about 10.3% lower. This is a consequence of correcting the RGB colors and white point. **225 cd/m² is a reference, not a cap:** calibrated full-screen white reached about **613 cd/m² at 100%**. The original maximum was not measured in this comparison, so the loss at maximum brightness is not quantified. [Brightness measurements explained](docs/MEASUREMENTS.md#brightness-sweep).
+
 Keep **system saturation at 100%**. OdinTools does not need to stay installed. If it was used to change saturation, restore 100% before applying a profile; uninstalling a settings app should not be treated as confirmation that its settings were reset. Avoid stacking night-light, color filters, emulator color corrections, or shaders unless you intentionally want a different result.
 
 **Before uninstalling this app or updating the firmware:** choose **Restore original**, then restart. Uninstalling the APK alone does not remove the system profile. Restoring also restores the brightness settings saved before the first profile installation.
@@ -81,7 +83,7 @@ This project does not claim to have proven or universally fixed “color crush,�
 
 ## Development and credits
 
-Source, profile deltas, measurement exports, and checks are provided for inspection. **OpenAI Codex** contributed to implementation, measurement analysis, device verification, and documentation. The hardware measurements and recorded validation results are the basis for the claims. [Contributors](CONTRIBUTORS.md) explains those roles; corrections and independent measurements are welcome. [Contributing](CONTRIBUTING.md).
+Source, profile deltas, measurement exports, and checks are provided for inspection. **OpenAI Codex** contributed to implementation, measurement analysis, device verification, and documentation. The hardware measurements and recorded validation results are the basis for the claims. [Contributors and credits](CONTRIBUTORS.md) explains who contributed and their roles. For bug reports, independent measurements, translations, or code changes, see [How to contribute](CONTRIBUTING.md).
 
 Thanks to the handheld community for documenting the color issue, to the OdinTools project for documenting the OEM service interface, and to ArgyllCMS for the measurement tools. [Third-party notes](THIRD_PARTY.md).
 

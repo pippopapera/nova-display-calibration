@@ -1,0 +1,25 @@
+# Private signing material and credentials
+*.jks
+*.keystore
+*.p12
+*.pem
+.env
+.env.*
+local.properties
+# Generated builds and local firmware inputs
+build/
+dist/
+private/
+*-system.json
+*qdcm*.json
+*.apk
+*.aab
+*.jar
+*.aar
+*.so
+*.ko
+# Host caches
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

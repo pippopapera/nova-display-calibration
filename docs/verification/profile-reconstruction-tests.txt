@@ -1,0 +1,22 @@
+PASS synthetic byte-exact reconstruction
+PASS wrong factory
+PASS wrong final checksum
+PASS truncated header
+PASS wrong magic
+PASS wrong field count
+PASS unexpected field index
+PASS too many operations
+PASS unknown operation
+PASS negative copy offset
+PASS copy outside input
+PASS negative literal size
+PASS oversized literal
+PASS truncated operation
+PASS trailing data
+PASS changed calibration value
+PASS oversized patch
+PASS bounded factory stream
+PASS bounded patch stream
+PASS measured gamma22 939485 bytes SHA256 c6e20079ef58220960e9511d5641bc02f1bcfb0f90c5bb0a842e5b2ed00c9afd
+PASS measured srgb 939629 bytes SHA256 8be527253edcc712006e73a26cbadd4f3aa1ade3bd8d2d00ae38587b3f393b25
+Passed: 21

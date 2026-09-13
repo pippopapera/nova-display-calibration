@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" formatted="false">Nova Calibração</string>
+    <string name="system_profile" formatted="false">PERFIL DO SISTEMA</string>
+    <string name="calibration_tools" formatted="false">Ferramentas de calibração.</string>
+    <string name="reference_note" formatted="false">Calibração de referência\nReinicie após cada alteração.\nO sistema mantém o perfil.</string>
+    <string name="choose_curve" formatted="false">Escolha a sua curva</string>
+    <string name="profile_hint" formatted="false">Perfis medidos nesta Nova.</string>
+    <string name="restore_original" formatted="false">Restaurar original</string>
+    <string name="reboot_device" formatted="false">Reiniciar dispositivo</string>
+    <string name="reading_profile" formatted="false">A ler o perfil…</string>
+    <string name="details_hint" formatted="false">Mantenha premido para ver os detalhes técnicos.</string>
+    <string name="measurement_footer" formatted="false">X-Rite i1Display Pro Plus  |  Medições SDR com correção OLED genérica</string>
+    <string name="curve_recommended" formatted="true">%1$s · recomendada</string>
+    <string name="curve_available" formatted="true">%1$s · disponível</string>
+    <string name="invalid_manifest" formatted="false">Perfis indisponíveis: configuração inválida.</string>
+    <string name="operation_running" formatted="false">Operação em curso…</string>
+    <string name="error_saturation" formatted="false">Defina a saturação do OdinTools para 100% e tente novamente.</string>
+    <string name="error_firmware" formatted="false">Este firmware requer uma nova validação do perfil.</string>
+    <string name="error_foreign" formatted="false">Já existe outro perfil do sistema. Alterações não guardadas.</string>
+    <string name="error_save" formatted="false">Não foi possível concluir a operação. Mantenha premido para os detalhes.</string>
+    <string name="profile_saved" formatted="true">%1$s guardada. Reinicie o dispositivo para aplicar.</string>
+    <string name="profile_unchanged" formatted="true">%1$s já configurada. Brilho mantido; não é preciso reiniciar.</string>
+    <string name="restore_saved" formatted="false">Restauro guardado. Reinicie para voltar às cores originais.</string>
+    <string name="original_unchanged" formatted="false">Cores originais já configuradas. Não é preciso reiniciar.</string>
+    <string name="rebooting" formatted="false">A reiniciar o dispositivo…</string>
+    <string name="original" formatted="false">Original</string>
+    <string name="firmware_changed" formatted="false">Firmware alterado: restaure o original. Os perfis precisam de nova validação.</string>
+    <string name="profile_active" formatted="true">%1$s configurada no sistema. Mantida após suspensão e reinício.</string>
+    <string name="status_unavailable" formatted="false">Estado indisponível. Mantenha premido para os detalhes.</string>
+    <string name="no_log" formatted="false">Nenhum registo disponível.</string>
+    <string name="operation_details" formatted="false">Detalhes das operações</string>
+    <string name="close" formatted="false">Fechar</string>
+</resources>

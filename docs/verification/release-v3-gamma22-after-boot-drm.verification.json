@@ -1,0 +1,11 @@
+{
+  "capture": "release-v3-gamma22-after-boot-drm.txt",
+  "reference_profile": "gamma22",
+  "IGC_exact_match": true,
+  "GC_exact_match": true,
+  "PCC_exact_match": true,
+  "HSIC_neutral": true,
+  "display_active": true,
+  "verified": true,
+  "scope": "Historical 0.3 device verification of the unchanged calibration payload; not a new 0.4 APK test."
+}

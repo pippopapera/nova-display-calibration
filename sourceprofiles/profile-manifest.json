@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "released": true,
+  "status": "measured SDR gamut and tone; provisional OLED CCSS",
+  "firmware_guard": "RPN_V1.0.0.436_20260722_083524_user",
+  "measurement_target": {
+    "whitepoint": "D65",
+    "white_luminance_cd_m2": 225,
+    "brightness_manual": 173
+  },
+  "profiles": {
+    "srgb": {
+      "label": "sRGB",
+      "released": true,
+      "igc_asset": "srgb-igc.bin",
+      "igc_sha256": "a5c6dc42d0502059c8b9a8a5b4964bec0ae6367b2230fd1565286215f4940894",
+      "gc_asset": "srgb-gc.bin",
+      "gc_sha256": "5b3a793730bb424695b024ff1c31fd6de79036958823bac512e6ed35480a593f",
+      "surfaceflinger_matrix": [
+        0.656953266,
+        0.167975076,
+        0.022851805,
+        0.031893402,
+        0.859306373,
+        0.016255594,
+        0.013718325,
+        0.064426663,
+        0.731058663
+      ],
+      "status": "measured SDR gamut and tone; provisional OLED CCSS",
+      "allow_apply": true,
+      "system_sha256": "8be527253edcc712006e73a26cbadd4f3aa1ade3bd8d2d00ae38587b3f393b25",
+      "patch_asset": "srgb.npatch",
+      "patch_sha256": "2b4375e4f4f4269eaa9060043d08a961abb50b31966a587e2661fe28492bf4b0"
+    },
+    "gamma22": {
+      "label": "Gamma 2.2",
+      "released": true,
+      "igc_asset": "gamma22-igc.bin",
+      "igc_sha256": "5c889ac52eefa02a9ccb93e2178a56d92eb4c7f2b3fd77f4e0aa697d5c14516a",
+      "gc_asset": "gamma22-gc.bin",
+      "gc_sha256": "5b3a793730bb424695b024ff1c31fd6de79036958823bac512e6ed35480a593f",
+      "surfaceflinger_matrix": [
+        0.656953266,
+        0.167975076,
+        0.022851805,
+        0.031893402,
+        0.859306373,
+        0.016255594,
+        0.013718325,
+        0.064426663,
+        0.731058663
+      ],
+      "status": "measured SDR gamut and tone; provisional OLED CCSS",
+      "allow_apply": true,
+      "system_sha256": "c6e20079ef58220960e9511d5641bc02f1bcfb0f90c5bb0a842e5b2ed00c9afd",
+      "patch_asset": "gamma22.npatch",
+      "patch_sha256": "9a4b0907250cc58d5c2272e72bcbc81e57188b4b5ea259ece2c4144d0beae04e"
+    }
+  },
+  "development_trial_enabled": false,
+  "recommended_profile": "gamma22",
+  "validation_state": "measured_sdr_gamut_tone_provisional",
+  "native_backend": {
+    "type": "Qualcomm QDCM data override",
+    "file": "/data/vendor/display/qdcm_calib_data_il97680a_amoled_panel_without_DSC.json",
+    "patched_modes": [
+      "NATIVE",
+      "sRGB"
+    ],
+    "pipeline": [
+      "PostBlendIGC",
+      "PostBlendPCC",
+      "PostBlendGC"
+    ],
+    "neutral_global_PA": true,
+    "application_at_next_full_reboot": true,
+    "wake_service_required": false,
+    "reference_brightness_slider_percent_approx": 68,
+    "brightness_free_after_apply": true,
+    "legacy_matrix_key_note": "surfaceflinger_matrix stores the historical coefficients. Native profiles encode them in PostBlendPCC; SurfaceFlinger remains identity.",
+    "hdr_and_display_p3": "factory payload preserved; not calibrated by this profile",
+    "correction_limitation": "Generic OLED Family 2018 CCSS; no panel-matched spectroradiometer reference"
+  },
+  "distribution": "calibration-only binary deltas; reconstruct from checksum-verified on-device factory data",
+  "factory_sha256": "26a56de100c2a27ecac2fe7ed4d30ba5bcb935865c7470775dcfda744d0173af"
+}

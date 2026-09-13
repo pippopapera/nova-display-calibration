@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" formatted="false">Nova Calibration</string>
+    <string name="system_profile" formatted="false">SYSTEM PROFILE</string>
+    <string name="calibration_tools" formatted="false">Calibration tools.</string>
+    <string name="reference_note" formatted="false">Reference calibration\nRestart after each change.\nThe system keeps the profile.</string>
+    <string name="choose_curve" formatted="false">Choose your curve</string>
+    <string name="profile_hint" formatted="false">Profiles measured on this Nova unit.</string>
+    <string name="restore_original" formatted="false">Restore original</string>
+    <string name="reboot_device" formatted="false">Restart device</string>
+    <string name="reading_profile" formatted="false">Reading profile…</string>
+    <string name="details_hint" formatted="false">Touch and hold for technical details.</string>
+    <string name="measurement_footer" formatted="false">X-Rite i1Display Pro Plus  |  SDR measurements with a generic OLED correction</string>
+    <string name="curve_recommended" formatted="true">%1$s · recommended</string>
+    <string name="curve_available" formatted="true">%1$s · available</string>
+    <string name="invalid_manifest" formatted="false">Profiles unavailable: invalid configuration.</string>
+    <string name="operation_running" formatted="false">Working…</string>
+    <string name="error_saturation" formatted="false">Set OdinTools saturation to 100%, then try again.</string>
+    <string name="error_firmware" formatted="false">This firmware needs a new profile validation.</string>
+    <string name="error_foreign" formatted="false">Another system profile exists. No changes saved.</string>
+    <string name="error_save" formatted="false">Could not complete the operation. Hold here for details.</string>
+    <string name="profile_saved" formatted="true">%1$s saved. Restart the device to apply it.</string>
+    <string name="profile_unchanged" formatted="true">%1$s already configured. Brightness kept; no restart needed.</string>
+    <string name="restore_saved" formatted="false">Restore saved. Restart to return to the original colors.</string>
+    <string name="original_unchanged" formatted="false">Original colors already configured. No restart needed.</string>
+    <string name="rebooting" formatted="false">Restarting the device…</string>
+    <string name="original" formatted="false">Original</string>
+    <string name="firmware_changed" formatted="false">Firmware changed: restore the original. Profiles need a new validation.</string>
+    <string name="profile_active" formatted="true">%1$s configured in the system. Persists after sleep and restart.</string>
+    <string name="status_unavailable" formatted="false">Status unavailable. Hold here for details.</string>
+    <string name="no_log" formatted="false">No log available.</string>
+    <string name="operation_details" formatted="false">Operation details</string>
+    <string name="close" formatted="false">Close</string>
+</resources>

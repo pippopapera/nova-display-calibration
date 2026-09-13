@@ -1,0 +1,55 @@
+{
+  "apk": "nova-calibration.apk",
+  "sha256": "b407704d253fa541758031b5b2bbb27a900454ac1210a0a389d214777e8e762f",
+  "bytes": 66711,
+  "permissions": [],
+  "debuggable": false,
+  "backup": false,
+  "services_receivers_providers": 0,
+  "native_libraries": 0,
+  "exported_components": [
+    "CalibrationActivity launcher"
+  ],
+  "classes": [
+    "Llocal/nova/diagnostic/AeroTheme$Orb;",
+    "Llocal/nova/diagnostic/AeroTheme$Sky;",
+    "Llocal/nova/diagnostic/AeroTheme;",
+    "Llocal/nova/diagnostic/CalibrationActivity$$ExternalSyntheticLambda0;",
+    "Llocal/nova/diagnostic/CalibrationActivity$$ExternalSyntheticLambda10;",
+    "Llocal/nova/diagnostic/CalibrationActivity$$ExternalSyntheticLambda11;",
+    "Llocal/nova/diagnostic/CalibrationActivity$$ExternalSyntheticLambda12;",
+    "Llocal/nova/diagnostic/CalibrationActivity$$ExternalSyntheticLambda13;",
+    "Llocal/nova/diagnostic/CalibrationActivity$$ExternalSyntheticLambda1;",
+    "Llocal/nova/diagnostic/CalibrationActivity$$ExternalSyntheticLambda2;",
+    "Llocal/nova/diagnostic/CalibrationActivity$$ExternalSyntheticLambda3;",
+    "Llocal/nova/diagnostic/CalibrationActivity$$ExternalSyntheticLambda4;",
+    "Llocal/nova/diagnostic/CalibrationActivity$$ExternalSyntheticLambda5;",
+    "Llocal/nova/diagnostic/CalibrationActivity$$ExternalSyntheticLambda6;",
+    "Llocal/nova/diagnostic/CalibrationActivity$$ExternalSyntheticLambda7;",
+    "Llocal/nova/diagnostic/CalibrationActivity$$ExternalSyntheticLambda8;",
+    "Llocal/nova/diagnostic/CalibrationActivity$$ExternalSyntheticLambda9;",
+    "Llocal/nova/diagnostic/CalibrationActivity;",
+    "Llocal/nova/diagnostic/ProfilePayload;",
+    "Llocal/nova/diagnostic/R$color;",
+    "Llocal/nova/diagnostic/R$drawable;",
+    "Llocal/nova/diagnostic/R$mipmap;",
+    "Llocal/nova/diagnostic/R$string;",
+    "Llocal/nova/diagnostic/R$xml;",
+    "Llocal/nova/diagnostic/R;"
+  ],
+  "assets": {
+    "srgb.npatch": "2b4375e4f4f4269eaa9060043d08a961abb50b31966a587e2661fe28492bf4b0",
+    "profile-manifest.json": "8d3ff83b5d0a759f5675606a52c1a13cc0df91926570353b6a8f05b31677ffe4",
+    "gamma22.npatch": "9a4b0907250cc58d5c2272e72bcbc81e57188b4b5ea259ece2c4144d0beae04e",
+    "nova-system-profile.sh": "7f352f8dc020479ce352cbffc540c0691f25f554b6e285afd3513f7b9f6b7e03"
+  },
+  "default_language": "en",
+  "translations": {
+    "it": 31,
+    "de": 31,
+    "es": 31,
+    "fr": 31,
+    "pt": 31
+  },
+  "factory_configuration_bundled": false
+}

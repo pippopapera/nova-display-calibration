@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" formatted="false">Nova Calibrazione</string>
+    <string name="system_profile" formatted="false">PROFILO DI SISTEMA</string>
+    <string name="calibration_tools" formatted="false">Tools di calibrazione.</string>
+    <string name="reference_note" formatted="false">Taratura di riferimento\nUn riavvio dopo ogni cambio.\nIl profilo resta nel sistema.</string>
+    <string name="choose_curve" formatted="false">Scegli la tua curva</string>
+    <string name="profile_hint" formatted="false">Profili misurati su questa Nova.</string>
+    <string name="restore_original" formatted="false">Ripristina originale</string>
+    <string name="reboot_device" formatted="false">Riavvia dispositivo</string>
+    <string name="reading_profile" formatted="false">Lettura del profilo…</string>
+    <string name="details_hint" formatted="false">Tieni premuto per i dettagli tecnici.</string>
+    <string name="measurement_footer" formatted="false">X-Rite i1Display Pro Plus  |  Misure SDR con correzione OLED generica</string>
+    <string name="curve_recommended" formatted="true">%1$s · consigliata</string>
+    <string name="curve_available" formatted="true">%1$s · disponibile</string>
+    <string name="invalid_manifest" formatted="false">Profili non disponibili: configurazione non valida.</string>
+    <string name="operation_running" formatted="false">Operazione in corso…</string>
+    <string name="error_saturation" formatted="false">Riporta la saturazione di OdinTools al 100%, poi riprova.</string>
+    <string name="error_firmware" formatted="false">Questo firmware richiede una nuova verifica del profilo.</string>
+    <string name="error_foreign" formatted="false">Esiste un altro profilo di sistema. Salvataggio interrotto.</string>
+    <string name="error_save" formatted="false">Operazione non completata. Tieni premuto qui per i dettagli.</string>
+    <string name="profile_saved" formatted="true">%1$s salvata. Riavvia il dispositivo per applicarla.</string>
+    <string name="profile_unchanged" formatted="true">%1$s già configurata. Luminosità mantenuta; nessun riavvio necessario.</string>
+    <string name="restore_saved" formatted="false">Ripristino salvato. Riavvia per tornare ai colori originali.</string>
+    <string name="original_unchanged" formatted="false">Colori originali già configurati. Nessun riavvio necessario.</string>
+    <string name="rebooting" formatted="false">Riavvio del dispositivo…</string>
+    <string name="original" formatted="false">Originale</string>
+    <string name="firmware_changed" formatted="false">Firmware cambiato: ripristina l’originale. I profili richiedono una nuova verifica.</string>
+    <string name="profile_active" formatted="true">%1$s configurata nel sistema. Resta attiva dopo standby e riavvio.</string>
+    <string name="status_unavailable" formatted="false">Stato non verificabile. Tieni premuto qui per i dettagli.</string>
+    <string name="no_log" formatted="false">Nessun registro disponibile.</string>
+    <string name="operation_details" formatted="false">Dettagli delle operazioni</string>
+    <string name="close" formatted="false">Chiudi</string>
+</resources>

@@ -1,0 +1,128 @@
+{
+  "date": "2026-09-13",
+  "readings": 921,
+  "datasets": [
+    {
+      "dataset": "native-gamma22-brightness-20260913/reference-173",
+      "readings": 60,
+      "source_jsonl_sha256": "c608673ce709d1357fcde6fc4287ef6cb830fb02db5400451e5b24612af20f59",
+      "ccss_sha256": "4d8ff5a68770490fdac842c63a1592cb00a6055ebd5f3c0947d51cd13d39255c",
+      "fullscreen": true
+    },
+    {
+      "dataset": "native-gamma22-brightness-20260913/slider-000-raw-001",
+      "readings": 60,
+      "source_jsonl_sha256": "07dbc64d8630d3352b88b7852cf3b9660c91ba7d10584c987481faf40ace73d7",
+      "ccss_sha256": "4d8ff5a68770490fdac842c63a1592cb00a6055ebd5f3c0947d51cd13d39255c",
+      "fullscreen": true
+    },
+    {
+      "dataset": "native-gamma22-brightness-20260913/slider-010-raw-026",
+      "readings": 60,
+      "source_jsonl_sha256": "49e1de8869f4578b1773678631d69fdec6efb49c4cc64493e089bd7c1c03c6c1",
+      "ccss_sha256": "4d8ff5a68770490fdac842c63a1592cb00a6055ebd5f3c0947d51cd13d39255c",
+      "fullscreen": true
+    },
+    {
+      "dataset": "native-gamma22-brightness-20260913/slider-020-raw-052",
+      "readings": 60,
+      "source_jsonl_sha256": "f02dcc4be0585cf874f886e34ebeb19ceb6ebee3c87944c93a608a1f394d6e85",
+      "ccss_sha256": "4d8ff5a68770490fdac842c63a1592cb00a6055ebd5f3c0947d51cd13d39255c",
+      "fullscreen": true
+    },
+    {
+      "dataset": "native-gamma22-brightness-20260913/slider-030-raw-077",
+      "readings": 60,
+      "source_jsonl_sha256": "af6e65b0124e771547f3e4627d48fc36087ae773bf5b560e5a20aade8901112b",
+      "ccss_sha256": "4d8ff5a68770490fdac842c63a1592cb00a6055ebd5f3c0947d51cd13d39255c",
+      "fullscreen": true
+    },
+    {
+      "dataset": "native-gamma22-brightness-20260913/slider-040-raw-103",
+      "readings": 60,
+      "source_jsonl_sha256": "d963682ecaa4c99138a07cb06151c16c5766371d0265e459baf1da918490105c",
+      "ccss_sha256": "4d8ff5a68770490fdac842c63a1592cb00a6055ebd5f3c0947d51cd13d39255c",
+      "fullscreen": true
+    },
+    {
+      "dataset": "native-gamma22-brightness-20260913/slider-050-raw-128",
+      "readings": 60,
+      "source_jsonl_sha256": "9f0733ef014bf8ab3e896932af903b217b9a64152fd4ab88dbf233437440e637",
+      "ccss_sha256": "4d8ff5a68770490fdac842c63a1592cb00a6055ebd5f3c0947d51cd13d39255c",
+      "fullscreen": true
+    },
+    {
+      "dataset": "native-gamma22-brightness-20260913/slider-060-raw-153",
+      "readings": 60,
+      "source_jsonl_sha256": "b445c70df1fe003738cecefef488b24a841d9becf5db9ecacf951a9058c69ee3",
+      "ccss_sha256": "4d8ff5a68770490fdac842c63a1592cb00a6055ebd5f3c0947d51cd13d39255c",
+      "fullscreen": true
+    },
+    {
+      "dataset": "native-gamma22-brightness-20260913/slider-070-raw-179",
+      "readings": 60,
+      "source_jsonl_sha256": "aea7c34e1a484259c0003d0571dd16f81705676366f641e1dc1f9e67a71b5d92",
+      "ccss_sha256": "4d8ff5a68770490fdac842c63a1592cb00a6055ebd5f3c0947d51cd13d39255c",
+      "fullscreen": true
+    },
+    {
+      "dataset": "native-gamma22-brightness-20260913/slider-080-raw-204",
+      "readings": 60,
+      "source_jsonl_sha256": "a79bfbc1061d7ab52a75cdd46854e137cfcb0094a895e54fa086d915e8805c83",
+      "ccss_sha256": "4d8ff5a68770490fdac842c63a1592cb00a6055ebd5f3c0947d51cd13d39255c",
+      "fullscreen": true
+    },
+    {
+      "dataset": "native-gamma22-brightness-20260913/slider-090-raw-230",
+      "readings": 60,
+      "source_jsonl_sha256": "7c756a6ce2d2022b3f31c1e6a0e0ea6cc5c8bb9ca5ececcbbddba262e074fe73",
+      "ccss_sha256": "4d8ff5a68770490fdac842c63a1592cb00a6055ebd5f3c0947d51cd13d39255c",
+      "fullscreen": true
+    },
+    {
+      "dataset": "native-gamma22-brightness-20260913/slider-100-raw-255",
+      "readings": 60,
+      "source_jsonl_sha256": "0a56a73bb6bdfe6bd2345318934f9d3e9abbc89cac83c857d77d774462afda7d",
+      "ccss_sha256": "4d8ff5a68770490fdac842c63a1592cb00a6055ebd5f3c0947d51cd13d39255c",
+      "fullscreen": true
+    },
+    {
+      "dataset": "native-srgb-reference-20260913",
+      "readings": 60,
+      "source_jsonl_sha256": "3d1470846ca4fd21a257837ce08d0a4e6895da11d8fc4f6c7dd77d0bd88dd62e",
+      "ccss_sha256": "4d8ff5a68770490fdac842c63a1592cb00a6055ebd5f3c0947d51cd13d39255c",
+      "fullscreen": true
+    },
+    {
+      "dataset": "native-gamma-final-reference-20260913",
+      "readings": 60,
+      "source_jsonl_sha256": "aa57e64e58fc4ea2627f44d126a8f98618c1741df40d85cb25a336378a7bfc21",
+      "ccss_sha256": "4d8ff5a68770490fdac842c63a1592cb00a6055ebd5f3c0947d51cd13d39255c",
+      "fullscreen": true
+    },
+    {
+      "dataset": "native-original-boundary-20260913",
+      "readings": 39,
+      "source_jsonl_sha256": "82a62b060ebfddd9c9258707d1c2865e8c484caa47f37a7dc56320a087462f50",
+      "ccss_sha256": "4d8ff5a68770490fdac842c63a1592cb00a6055ebd5f3c0947d51cd13d39255c",
+      "fullscreen": true
+    },
+    {
+      "dataset": "native-gamma-boundary-20260913",
+      "readings": 39,
+      "source_jsonl_sha256": "dbff7bc5c697b595c2ef79a96963c988314e0d90daa2e9b379af5e54ce41765b",
+      "ccss_sha256": "4d8ff5a68770490fdac842c63a1592cb00a6055ebd5f3c0947d51cd13d39255c",
+      "fullscreen": true
+    },
+    {
+      "dataset": "native-final-white-20260913",
+      "readings": 3,
+      "source_jsonl_sha256": "75dca735d499719597116b71b48bdf5f8009d2560f9a3e4bdec42d660ef4a952",
+      "ccss_sha256": "4d8ff5a68770490fdac842c63a1592cb00a6055ebd5f3c0947d51cd13d39255c",
+      "fullscreen": true
+    }
+  ],
+  "instrument": "X-Rite i1Display Pro Plus EODIS3PL",
+  "correction": "Generic OLED Family 2018 CCSS; provisional",
+  "export": "Exact recorded RGB/XYZ values. Local paths, device serial, and patch UUIDs omitted. No optical values adjusted."
+}

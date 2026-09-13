@@ -1,0 +1,61 @@
+{
+  "version": "0.4.0",
+  "signing": "local test key; release signing pending",
+  "tests": [
+    {
+      "test": "Gamma reconstruction on device; repeated selection preserves brightness",
+      "passed": true
+    },
+    {
+      "test": "apply srgb from normal app UI",
+      "passed": true
+    },
+    {
+      "test": "srgb survives full reboot",
+      "passed": true,
+      "hardware_readback_verified": true,
+      "app_services_absent": true,
+      "surfaceflinger_identity": true,
+      "brightness": 173
+    },
+    {
+      "test": "apply original from normal app UI",
+      "passed": true
+    },
+    {
+      "test": "original survives full reboot",
+      "passed": true,
+      "hardware_readback_verified": true,
+      "app_services_absent": true,
+      "surfaceflinger_identity": true
+    },
+    {
+      "test": "apply gamma22 from normal app UI",
+      "passed": true
+    },
+    {
+      "test": "gamma22 survives full reboot",
+      "passed": true,
+      "hardware_readback_verified": true,
+      "app_services_absent": true,
+      "surfaceflinger_identity": true
+    },
+    {
+      "test": "Gamma survives sleep with app force-stopped",
+      "passed": true,
+      "app_process_absent": true,
+      "hardware_readback_verified": true
+    }
+  ],
+  "status": "passed",
+  "final_lock_disabled": "false",
+  "final_timeout_ms": "60000",
+  "final_brightness": "173",
+  "display_asleep": true,
+  "tested_apk_sha256": "b407704d253fa541758031b5b2bbb27a900454ac1210a0a389d214777e8e762f",
+  "installed_apk_identical": true,
+  "system_saturation": "1.0",
+  "remaining_nova_temporary_files": [],
+  "app_locale_override_cleared": true,
+  "harness_note": "Post-boot USB chooser/ADB transitions and unavailable UI hierarchy interrupted automated checks. Those attempts were not counted as passes. Original and Gamma checks were completed with fresh screen inspection and hardware readback."
+}

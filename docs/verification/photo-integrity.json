@@ -1,0 +1,34 @@
+[
+  {
+    "image": "original.jpg",
+    "dimensions": [
+      1831,
+      1367
+    ],
+    "source_sha256": "47243cd01b8167aa4717f06b2feb835359280a07337df327b10eb6e4926a6763",
+    "public_sha256": "c0ce7346701b319caf0d5607bcca89b011750e860558c86da5983e55d7267ee2",
+    "metadata_segments_removed": [
+      "0xe1",
+      "0xe1"
+    ],
+    "decoded_pixels_identical": true,
+    "recompressed": false,
+    "exif_present": false
+  },
+  {
+    "image": "gamma22.jpg",
+    "dimensions": [
+      1715,
+      1287
+    ],
+    "source_sha256": "c271f68c5fa4c617640444fff119685d7286a34e8dfcbf042b48a3cc5625dd19",
+    "public_sha256": "23bdf309c07e57fb8f98c72acdd3cdfb4a69986d8fc92a865d9b5932ef9528db",
+    "metadata_segments_removed": [
+      "0xe1",
+      "0xe1"
+    ],
+    "decoded_pixels_identical": true,
+    "recompressed": false,
+    "exif_present": false
+  }
+]

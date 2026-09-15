@@ -1,0 +1,26 @@
+name: Feature or compatibility request
+description: Suggest an improvement or request investigation of another device or firmware.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please check existing issues and describe the problem you want to solve. New device or firmware support requires investigation and verification; changing a compatibility guard alone is not sufficient.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What would this help you do?
+      description: Describe the current limitation or use case.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Suggested behavior
+      description: Explain the improvement and any alternatives you have considered.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Device, firmware, and supporting information
+      description: For compatibility requests, include the model and exact firmware build. Links to public specifications or measurement results are useful. Do not upload serial numbers, private logs, firmware binaries, or factory display configuration JSON files.

@@ -1,0 +1,52 @@
+name: Bug report
+description: Report an application, installation, restore, or display problem.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please check the [README](https://github.com/pippopapera/nova-display-calibration#readme) and existing issues first. Write in English; "unknown" is fine for information you cannot find.
+
+        Remove device identifiers, credentials, and other personal information from attachments. Do not upload full firmware files or display configuration JSON files. For a suspected vulnerability, follow the [security reporting guidance](https://github.com/pippopapera/nova-display-calibration/blob/main/docs/SECURITY.md#reporting) instead of posting exploit details here.
+  - type: input
+    id: app-version
+    attributes:
+      label: App version
+      placeholder: "For example: 1.0.0"
+    validations:
+      required: true
+  - type: textarea
+    id: device-firmware
+    attributes:
+      label: Device and firmware build
+      description: Include the device model and exact firmware build from Android Settings. Do not include the serial number.
+    validations:
+      required: true
+  - type: dropdown
+    id: profile
+    attributes:
+      label: Selected profile or action
+      options:
+        - Gamma 2.2
+        - sRGB
+        - Restore original
+        - App launch or status check
+        - Other or unknown
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the steps to reproduce, what you expected, and what actually happened. Say whether you restarted after applying or restoring the profile.
+    validations:
+      required: true
+  - type: textarea
+    id: display-settings
+    attributes:
+      label: Display settings and other tools
+      description: Include brightness, refresh rate, internal or external display, and any color filters or saturation tools. If you used OdinTools, say which saturation value you explicitly applied; its displayed value alone may not establish the active setting.
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Relevant status log, screenshots, or comparisons
+      description: Long-press the app's status area to view its log. Share only relevant, sanitized text. If you have already checked the original profile after a restart, describe the result. Do not attempt extra restores or firmware changes just to complete this report if an operation has failed.

@@ -1,0 +1,44 @@
+name: Measurement report
+description: Share instrument readings or an independent calibration verification.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Independent measurements are welcome. Please read the [published methodology and limitations](https://github.com/pippopapera/nova-display-calibration/blob/main/docs/MEASUREMENTS.md).
+
+        Photographs can illustrate a difference but cannot establish color accuracy. Remove personal information and location metadata before uploading files. Do not upload factory display configuration JSON files or firmware binaries.
+  - type: textarea
+    id: setup
+    attributes:
+      label: Device, firmware, and app version
+      description: Include the exact firmware build and whether the measurement is of the internal display or an external screen. Do not include device serial numbers.
+    validations:
+      required: true
+  - type: textarea
+    id: instrument
+    attributes:
+      label: Instrument and measurement software
+      description: Name the instrument, software and version, and spectral correction used (including its source). State explicitly if no correction was used or if it is unknown.
+    validations:
+      required: true
+  - type: textarea
+    id: conditions
+    attributes:
+      label: Profiles, settings, and measurement conditions
+      description: Include active profile, restart state, brightness, measured white luminance if available, system saturation, refresh rate, and other color settings. Describe patch size and background, patch source, settling time, sensor placement, and ambient conditions. Identify changes between comparison runs.
+    validations:
+      required: true
+  - type: textarea
+    id: readings
+    attributes:
+      label: Raw readings and analysis
+      description: Attach or link RGB patch values and measured XYZ data, with units and run labels. Describe your target gamut, white point, tone curve, luminance normalization, and error metric. State any missing information.
+    validations:
+      required: true
+  - type: textarea
+    id: conclusion
+    attributes:
+      label: Findings and limitations
+      description: Explain what the readings support, what differs from the published results, and any uncertainty or repeatability checks.
+    validations:
+      required: true

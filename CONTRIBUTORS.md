@@ -2,19 +2,15 @@
 
 This page records who contributed to the project and what they did. To help with the project, see [How to contribute](CONTRIBUTING.md).
 
-## pippopapera — project owner and maintainer
+## pippopapera — project creator and maintainer
 
-[pippopapera](https://github.com/pippopapera) initiated the project, defined the goals and user experience, supplied the Retroid Pocket Nova and X-Rite colorimeter, positioned the sensor, tested the app in everyday use, provided the comparison photographs, and authorized publication. The owner maintains the repository and its release signing identity.
+[pippopapera](https://github.com/pippopapera) conceived the project and led its development, defining the calibration goals, app behavior, and visual design. He provided the Nova and colorimeter, set up the measurement sessions, tested the app in everyday use, and supplied the comparison photographs. He maintains the repository and releases and handles community feedback.
 
 ## OpenAI Codex — AI development assistant
 
-This project was developed with substantial assistance from **OpenAI Codex**. Its contributions included implementation and revision of the Android app and calibration tooling, analysis of instrument readings, automated device checks, packaging and signing preparation, and English documentation.
+OpenAI Codex provided substantial assistance with the Android app and measurement code, analysis of instrument readings, automated checks, and documentation, under the maintainer's direction.
 
-The colorimeter recorded the measurements on a physical device. Codex helped run and analyze those measurements through tools; it did not replace them with visual guesses. The published verification records distinguish optical measurements, software checks, hardware readback, and limitations.
-
-This attribution describes an AI tool's contribution, not a human contributor account, an independent certification, or endorsement by OpenAI. The project does not claim that AI-generated code is inherently correct. The source, raw readings, and validation records are available for inspection and independent reproduction.
-
-GitHub's automatic contributor list is based on commit accounts. This file records contributions that list cannot accurately represent.
+The calibration is based on physical colorimeter measurements. See [Measurements and methodology](docs/MEASUREMENTS.md) for the data, verification results, and limitations.
 
 ## Community and third-party work
 

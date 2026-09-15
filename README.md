@@ -4,7 +4,7 @@
 
 [**Download v1.0.0 APK**](https://github.com/pippopapera/nova-display-calibration/releases/download/v1.0.0/Nova-Display-Calibration-1.0.0.apk) · [Release notes and SHA-256](https://github.com/pippopapera/nova-display-calibration/releases/tag/v1.0.0)
 
-A project by **pippopapera**, developed with substantial assistance from **OpenAI Codex**. [Contributors and the role of AI](CONTRIBUTORS.md).
+Created and maintained by [pippopapera](https://github.com/pippopapera), with development assistance from OpenAI Codex. [Contributors and credits](CONTRIBUTORS.md).
 
 The goal is a more accurate sRGB image, with a D65 white point and a measured tone response. This is a colorimeter-based alternative to adjusting saturation by eye. Choose **Gamma 2.2** or **sRGB**, restart, and use the console normally. The app does not run a background service to keep the calibration active.
 
@@ -83,7 +83,7 @@ This project does not claim to have proven or universally fixed “color crush,�
 
 ## Development and credits
 
-Source, profile deltas, measurement exports, and checks are provided for inspection. **OpenAI Codex** contributed to implementation, measurement analysis, device verification, and documentation. The hardware measurements and recorded validation results are the basis for the claims. [Contributors and credits](CONTRIBUTORS.md) explains who contributed and their roles. For bug reports, independent measurements, translations, or code changes, see [How to contribute](CONTRIBUTING.md).
+Source, profile deltas, measurement exports, and checks are provided for inspection. The hardware measurements and recorded validation results are the basis for the claims. See [Contributors and credits](CONTRIBUTORS.md) for project roles, or [How to contribute](CONTRIBUTING.md) for bug reports, independent measurements, translations, and code changes.
 
 Thanks to the handheld community for documenting the color issue, to the OdinTools project for documenting the OEM service interface, and to ArgyllCMS for the measurement tools. [Third-party notes](THIRD_PARTY.md).
 

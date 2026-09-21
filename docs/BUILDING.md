@@ -2,7 +2,7 @@
 
 ## Requirements
 
-The tested build runs on Windows with PowerShell, JDK 24, Android SDK platform 36, and build-tools 35.0.0. Python is needed for the optional APK/data checks. No Gradle, JNA, NDK, colorimeter, or factory firmware download is required to build the normal APK. Android API 33 is the tested runtime; the manifest's minimum API is not a claim of compatibility with other devices.
+The tested build runs on Windows with PowerShell, JDK 24, Android SDK platform 36, and build-tools 35.0.0. Python and Git for Windows (its bundled shell) are needed for installer regression tests; Python also runs the APK/data checks. No Gradle, JNA, NDK, colorimeter, or factory firmware download is required to build the normal APK. Android API 33 is the tested runtime; the manifest's minimum API is not a claim of compatibility with other devices.
 
 Set `JAVA_HOME` and `ANDROID_SDK_ROOT`, or provide `-Jdk` and `-Sdk` explicitly.
 
@@ -10,7 +10,7 @@ Set `JAVA_HOME` and `ANDROID_SDK_ROOT`, or provide `-Jdk` and `-Sdk` explicitly.
 # Local evaluation only; creates/uses an ignored local test keystore.
 .\build.ps1 -TestBuild
 
-# Test the actual production decoder using synthetic fixtures.
+# Test the production decoder and installer using synthetic fixtures.
 .\test.ps1
 
 # Inspect the compiled manifest, classes, translations, and bundled assets.
@@ -56,6 +56,7 @@ python tools/generate-profile-patches.py --factory C:\private\panel-factory.json
 - Actual device, local candidate: profile changes through the normal app UI, full reboot, original-profile restore, brightness preservation on repeated selection, and persistence with the app force-stopped through sleep/wake. See the [candidate device report](verification/device-validation.json).
 - Public signed 0.4.0 APK: identical non-signature ZIP entry contents, fresh installation after restoring/removing the laboratory build, and repeated profile/reboot/restore/persistence checks. See the [0.4.0 release validation](verification/release-signature-validation.json).
 - Version 1.0.0: version metadata change with the same signing identity, code, resources, and calibration assets. See the [1.0.0 update validation](verification/release-1.0.0-validation.json) and [certificate verification](verification/release-signing-certificate.txt).
+- Version 1.0.1: reproduced the misleading saturation rejection, added an explicit current/startup saturation reset, and verified cancellation, in-place update, all three profile/reboot paths, hardware readback, and force-stop/sleep/wake. The final signed APK passed 21 decoder checks and 10 installer test methods with multiple scenarios. [1.0.1 validation and limits](verification/release-1.0.1-validation.json) · [Host test output](verification/release-1.0.1-host-tests.txt).
 - Earlier optical campaign: 921 recorded readings. The public app reconstructs the same profile bytes; packaging and version changes do not constitute new optical readings.
 
 [APK inspection](verification/apk-audit.json) · [Decoder test log](verification/profile-reconstruction-tests.txt) · [Measurement report](MEASUREMENTS.md)

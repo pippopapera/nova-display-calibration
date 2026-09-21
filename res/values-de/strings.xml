@@ -15,7 +15,13 @@
     <string name="curve_available" formatted="true">%1$s · verfügbar</string>
     <string name="invalid_manifest" formatted="false">Profile nicht verfügbar: ungültige Konfiguration.</string>
     <string name="operation_running" formatted="false">Vorgang läuft…</string>
-    <string name="error_saturation" formatted="false">OdinTools-Sättigung auf 100% setzen und erneut versuchen.</string>
+    <string name="error_saturation_boot" formatted="false">Die Sättigung muss für Kalibrierung und Neustart eingestellt werden. Zum Zurücksetzen ein Profil auswählen.</string>
+    <string name="error_color_transform" formatted="false">Eine andere Farbanpassung ist aktiv. Sättigung auf 100% zurücksetzen und Farbfilter deaktivieren, dann erneut versuchen.</string>
+    <string name="error_color_state" formatted="false">Farbeinstellungen konnten nicht geprüft werden. Profil nicht gespeichert. Für Details hier gedrückt halten.</string>
+    <string name="saturation_reset_title" formatted="false">Sättigung auf 100% zurücksetzen?</string>
+    <string name="saturation_reset_message" formatted="false">Die Kalibrierung benötigt 100% Sättigung, auch nach einem Neustart. Zurücksetzen und dieses Profil anwenden? Andere Farbfilter bleiben unverändert. Auch nach Wiederherstellung des Originalprofils bleibt die Sättigung bei 100%.</string>
+    <string name="saturation_reset_apply" formatted="false">Zurücksetzen und anwenden</string>
+    <string name="cancel" formatted="false">Abbrechen</string>
     <string name="error_firmware" formatted="false">Dieses Firmware-Profil muss neu geprüft werden.</string>
     <string name="error_foreign" formatted="false">Ein anderes Systemprofil existiert. Nicht gespeichert.</string>
     <string name="error_save" formatted="false">Vorgang fehlgeschlagen. Hier für Details gedrückt halten.</string>

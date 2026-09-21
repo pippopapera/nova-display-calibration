@@ -15,7 +15,13 @@
     <string name="curve_available" formatted="true">%1$s · disponible</string>
     <string name="invalid_manifest" formatted="false">Profils indisponibles : configuration invalide.</string>
     <string name="operation_running" formatted="false">Opération en cours…</string>
-    <string name="error_saturation" formatted="false">Réglez la saturation OdinTools à 100 %, puis réessayez.</string>
+    <string name="error_saturation_boot" formatted="false">La saturation doit être réglée pour la calibration et le redémarrage. Sélectionnez un profil pour la réinitialiser.</string>
+    <string name="error_color_transform" formatted="false">Un autre réglage des couleurs est actif. Rétablissez la saturation à 100 % et désactivez les filtres de couleur, puis réessayez.</string>
+    <string name="error_color_state" formatted="false">Impossible de vérifier les réglages des couleurs. Profil non enregistré. Appuyez longuement ici pour les détails.</string>
+    <string name="saturation_reset_title" formatted="false">Rétablir la saturation à 100 % ?</string>
+    <string name="saturation_reset_message" formatted="false">La calibration nécessite une saturation à 100 %, même après redémarrage. La réinitialiser et appliquer ce profil ? Les autres filtres de couleur restent inchangés. Restaurer le profil original conservera la saturation à 100 %.</string>
+    <string name="saturation_reset_apply" formatted="false">Réinitialiser et appliquer</string>
+    <string name="cancel" formatted="false">Annuler</string>
     <string name="error_firmware" formatted="false">Ce firmware nécessite une nouvelle validation du profil.</string>
     <string name="error_foreign" formatted="false">Un autre profil système existe. Modifications non enregistrées.</string>
     <string name="error_save" formatted="false">Opération inachevée. Appuyez longuement ici pour les détails.</string>

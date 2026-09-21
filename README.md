@@ -2,7 +2,7 @@
 
 **Measured SDR color profiles for the Retroid Pocket Nova. Applied once, loaded by the display system at boot.**
 
-[**Download v1.0.0 APK**](https://github.com/pippopapera/nova-display-calibration/releases/download/v1.0.0/Nova-Display-Calibration-1.0.0.apk) · [Release notes and SHA-256](https://github.com/pippopapera/nova-display-calibration/releases/tag/v1.0.0)
+[**Download v1.0.1 APK**](https://github.com/pippopapera/nova-display-calibration/releases/download/v1.0.1/Nova-Display-Calibration-1.0.1.apk) · [Release notes and SHA-256](https://github.com/pippopapera/nova-display-calibration/releases/tag/v1.0.1)
 
 Created and maintained by [pippopapera](https://github.com/pippopapera), with development assistance from OpenAI Codex. [Contributors and credits](CONTRIBUTORS.md).
 
@@ -41,8 +41,8 @@ Both are compared with the same sRGB/D65/Gamma 2.2 target, normalized to each pr
 
 ## Daily use
 
-1. Download the signed APK from [Releases](https://github.com/pippopapera/nova-display-calibration/releases/tag/v1.0.0). Allow installation from your browser or file manager if Android asks, install it, then open **Nova Calibration**.
-2. Choose **Gamma 2.2 · recommended** or **sRGB**.
+1. Download the signed APK from [Releases](https://github.com/pippopapera/nova-display-calibration/releases/tag/v1.0.1). Allow installation from your browser or file manager if Android asks, install it, then open **Nova Calibration**. Version 1.0.1 installs over 1.0.0 without uninstalling.
+2. Choose **Gamma 2.2 · recommended** or **sRGB**. If the saturation setup prompt appears, choose **Reset and apply** to use the required 100% saturation.
 3. Press **Restart device** when requested. A full restart is needed after an actual profile change.
 4. Use your console normally. You can close the app and change the brightness.
 
@@ -50,9 +50,9 @@ The reference is **about 225 cd/m² at Android brightness 173/255**, approximate
 
 **Calibration reduces light output at the same slider setting:** at approximately 68%, white measured 250.7 cd/m² originally and 225.0 cd/m² calibrated, about 10.3% lower. This is a consequence of correcting the RGB colors and white point. **225 cd/m² is a reference, not a cap:** calibrated full-screen white reached about **613 cd/m² at 100%**. The original maximum was not measured in this comparison, so the loss at maximum brightness is not quantified. [Brightness measurements explained](docs/MEASUREMENTS.md#brightness-sweep).
 
-Keep **system saturation at 100%**. OdinTools does not need to stay installed. If it was used to change saturation, restore 100% before applying a profile; uninstalling a settings app should not be treated as confirmation that its settings were reset. Avoid stacking night-light, color filters, emulator color corrections, or shaders unless you intentionally want a different result.
+Keep **system saturation at 100%**. Starting with version 1.0.1, the app offers **Reset and apply** when current or saved saturation needs attention. Confirming sets saturation to 100% for the current session and restart, then checks the display before applying the profile. OdinTools is not required. Uninstalling a settings app is not proof that its adjustments were reset. Avoid stacking night-light, color filters, emulator color corrections, or shaders unless you intentionally want a different result. [Saturation setup and troubleshooting](docs/SATURATION.md).
 
-**Before uninstalling this app or updating the firmware:** choose **Restore original**, then restart. Uninstalling the APK alone does not remove the system profile. Restoring also restores the brightness settings saved before the first profile installation.
+**Before uninstalling this app or updating the firmware:** choose **Restore original**, then restart. Uninstalling the APK alone does not remove the system profile. Restoring also restores the brightness settings saved before the first profile installation. A saturation reset explicitly confirmed in version 1.0.1 stays at 100% after restoring the original profile.
 
 ## Small app, system-managed calibration
 

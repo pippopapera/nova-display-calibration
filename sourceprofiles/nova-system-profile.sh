@@ -17,9 +17,81 @@ file_sha256() { sha256sum "$1" | cut -d' ' -f1; }
 expected() {
     case "$1" in gamma22) echo "$GAMMA" ;; srgb) echo "$SRGB" ;; *) return 1 ;; esac
 }
+
+# A missing property means 1.0 in SurfaceFlinger, not an OdinTools error.
+# OdinTools can also change the live transform without updating this property.
+# Read both independently. Only the explicit reset-saturation action changes them.
+read_color_state() {
+    saturation_state=unavailable
+    saturation_value='<unavailable>'
+    if saturation_value=$(getprop persist.sys.sf.color_saturation); then
+        if [ -z "$saturation_value" ]; then
+            saturation_value='<default:1.0>'
+            saturation_state=default
+        else
+            saturation_state=$(printf '%s\n' "$saturation_value" | LC_ALL=C awk '
+                NR != 1 { invalid=1 }
+                NR == 1 {
+                    if ($0 !~ /^[+]?[0-9]+([.][0-9]*)?([eE][+-]?[0-9]+)?$/) invalid=1
+                    neutral=($0 + 0 == 1)
+                }
+                END { print invalid ? "invalid" : (neutral ? "neutral" : "modified") }
+            ')
+        fi
+    fi
+    # Keep malformed property contents out of the line-oriented operation log.
+    case "$saturation_state" in invalid|unavailable) saturation_value="<$saturation_state>" ;; esac
+    printf 'NOVA_SATURATION_PERSISTENT=%s\n' "$saturation_value"
+    printf 'NOVA_SATURATION_PERSISTENT_STATUS=%s\n' "$saturation_state"
+
+    transform_state=unavailable
+    # Bounded read. Do not store the full dump (it contains unrelated app details).
+    if sf_dump=$(dumpsys -t 5 SurfaceFlinger 2>/dev/null); then
+        transform=$(printf '%s\n' "$sf_dump" | LC_ALL=C awk '
+            /^Display / { internal=0 }
+            /layerFilter=.*toInternalDisplay=true/ { internal=1 }
+            internal && /^[[:space:]]*colorTransformMatrix=/ {
+                sub(/^[[:space:]]*colorTransformMatrix=/, "")
+                gsub(/[[:space:]]/, "")
+                print
+            }
+        ')
+        unset sf_dump
+        # This is the internal display only, not an external/virtual display or layer.
+        # The firmware prints matrix components to three decimal places.
+        transform=$(printf '%s' "$transform" | sed 's/-0\.000/0.000/g')
+        if [ "$transform" = '[[1.000,0.000,0.000,0.000][0.000,1.000,0.000,0.000][0.000,0.000,1.000,0.000][0.000,0.000,0.000,1.000]]' ]; then
+            transform_state=identity
+        elif printf '%s\n' "$transform" | LC_ALL=C awk '
+            BEGIN { row="\\[[-]?[0-9]+[.][0-9]+,[-]?[0-9]+[.][0-9]+,[-]?[0-9]+[.][0-9]+,[-]?[0-9]+[.][0-9]+\\]" }
+            NR == 1 && $0 ~ ("^\\[" row row row row "\\]$") { valid=1 }
+            END { exit !(NR == 1 && valid) }
+        '; then
+            transform_state=modified
+        fi
+    fi
+    printf 'NOVA_COLOR_TRANSFORM_STATUS=%s\n' "$transform_state"
+}
+
+require_neutral_color_state() {
+    read_color_state
+    case "$saturation_state" in
+        default|neutral|modified) ;;
+        *) fail color_state_unavailable ;;
+    esac
+    # Android 13 ColorDisplayService compares this STRING with "1.0" when
+    # inferring its startup mode. Empty, "1", and "1.000" can select boosted
+    # mode (1.1) at boot even while the current SurfaceFlinger matrix is identity.
+    [ "$saturation_value" = 1.0 ] || fail saturation_setup_required
+    case "$transform_state" in
+        identity) ;;
+        modified) fail color_transform_active ;;
+        *) fail color_state_unavailable ;;
+    esac
+}
 [ "$(id -u)" = 0 ] || fail root_required
 action=${1-status}
-case "$action" in status|apply|restore) ;; *) fail bad_action ;; esac
+case "$action" in status|apply|restore|reset-saturation) ;; *) fail bad_action ;; esac
 # Lock before reading state; another invocation must not act on a stale snapshot.
 mkdir -m 700 "$LOCK" || fail operation_busy
 trap 'rmdir "$LOCK"' EXIT
@@ -57,7 +129,19 @@ if [ "$action" = status ]; then
     echo "NOVA_NATIVE_PROFILE=$profile"
     echo "NOVA_NATIVE_REBOOT_REQUIRED=$pending"
     echo "NOVA_NATIVE_FIRMWARE_COMPATIBLE=$compatible"
+    read_color_state
     echo NOVA_NATIVE_STATUS_OK=1
+    exit 0
+fi
+if [ "$action" = reset-saturation ]; then
+    [ "$compatible" = 1 ] || fail firmware_mismatch
+    # Separate, user-confirmed operation. Never resets night-light, accessibility,
+    # another app's preferences, the panel profile, or the display color mode.
+    setprop persist.sys.sf.color_saturation 1.0 || fail saturation_reset_failed
+    service call SurfaceFlinger 1022 f 1.0 >/dev/null || fail saturation_reset_failed
+    sleep 0.2
+    require_neutral_color_state
+    echo NOVA_NATIVE_SATURATION_RESET=1
     exit 0
 fi
 case "$action" in apply|restore) ;; *) fail bad_action ;; esac
@@ -69,7 +153,7 @@ if [ "$action" = apply ]; then
     chosen_hash=$(expected "$chosen") || fail bad_profile
     [ -f "$SOURCE" ] && [ ! -L "$SOURCE" ] || fail missing_payload
     [ "$(file_sha256 "$SOURCE")" = "$chosen_hash" ] || fail payload_hash
-    case "$(getprop persist.sys.sf.color_saturation)" in 1|1.0|1.00|1.000000) ;; *) fail odin_saturation_not_100 ;; esac
+    require_neutral_color_state
 else
     chosen=original
 fi

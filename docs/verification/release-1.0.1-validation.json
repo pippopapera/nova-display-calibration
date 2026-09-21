@@ -1,0 +1,79 @@
+{
+  "version": "1.0.1",
+  "version_code": 6,
+  "date": "2026-09-21",
+  "status": "passed",
+  "scope": "One supported physical Nova; software, signed-APK and hardware register checks. No new optical measurements.",
+  "firmware": "RPN_V1.0.0.436_20260722_083524_user",
+  "apk_sha256": "7c0197aa724f620134e0cb5efdba28dd55adc630ac678bf733cd6d6d013b920d",
+  "apk_bytes": 78998,
+  "certificate_sha256": "f6c76258cf877435f5f1e453569ec131f92f6c284f7fa99783360a7aa10cca34",
+  "signature_v2_verified": true,
+  "signature_v3_verified": true,
+  "installed_apk_byte_identical": true,
+  "in_place_update_from_1_0_0": true,
+  "host_decoder_tests": 21,
+  "host_installer_test_methods": 10,
+  "host_evidence": "release-1.0.1-host-tests.txt",
+  "final_apk_full_reboots": 3,
+  "profiles": [
+    {
+      "profile": "gamma22",
+      "full_reboot_verified": true,
+      "saved_saturation": "1.0",
+      "internal_transform_identity": true,
+      "hardware_evidence": "release-1.0.1-gamma22-drm.verification.json"
+    },
+    {
+      "profile": "srgb",
+      "full_reboot_verified": true,
+      "saved_saturation": "1.0",
+      "internal_transform_identity": true,
+      "hardware_evidence": "release-1.0.1-srgb-drm.verification.json"
+    },
+    {
+      "profile": "original",
+      "full_reboot_verified": true,
+      "saved_saturation": "1.0",
+      "internal_transform_identity": true,
+      "hardware_evidence": "release-1.0.1-original-drm.verification.json"
+    }
+  ],
+  "final_apk_reset_checks": {
+    "saved_0_8_with_live_identity_requires_confirmation": true,
+    "cancel_preserves_saturation_profile_and_brightness": true,
+    "confirm_sets_saved_and_live_saturation_to_1_0": true,
+    "reselecting_same_profile_preserves_brightness": true,
+    "no_new_reboot_requested_for_unchanged_profile": true,
+    "force_stop_sleep_wake_without_app_process": true
+  },
+  "additional_candidate_device_cases": [
+    "Version 1.0.0 rejects an empty saved property even with an identity live matrix.",
+    "An empty property restored to 1.1 at reboot; accepting an empty value alone was not sufficient.",
+    "Confirmed reset from an empty property, followed by Gamma 2.2 application and a neutral reboot.",
+    "A live 0.8 adjustment with saved 1.0 was detected; reset, sRGB application and reboot succeeded.",
+    "Restore original remained available with a live 1.1 adjustment; reboot restored original hardware state.",
+    "Saved 1.000 required normalization; confirmed reset and subsequent Gamma 2.2 reboot succeeded.",
+    "English and Italian reset dialogs visually inspected. All six locale key sets checked in the final APK."
+  ],
+  "candidate_scope": "The legacy rejection and the empty-property reboot were investigation checks. The additional reset/apply cases used the same installer asset and translated reset text as the final APK. Final change added obscured-touch filtering to dialog buttons; final APK was retested separately as listed above.",
+  "frozen_profiles_unchanged": true,
+  "gamma22_sha256": "c6e20079ef58220960e9511d5641bc02f1bcfb0f90c5bb0a842e5b2ed00c9afd",
+  "srgb_sha256": "8be527253edcc712006e73a26cbadd4f3aa1ade3bd8d2d00ae38587b3f393b25",
+  "limitations": [
+    "The original reporter's device has not been retested by the maintainer.",
+    "The live matrix dump rounds to three decimals and is not an optical measurement.",
+    "Another app or system setting can subsequently override saturation; there is no background enforcement.",
+    "Host mocks do not replace the physical device tests reported separately."
+  ],
+  "final_device_state": {
+    "gamma22": true,
+    "saturation_restored": true,
+    "screen_timeout_restored": true,
+    "lock_setting_restored": true,
+    "temporary_tools_removed": true,
+    "locale_restored": true,
+    "display_asleep": true,
+    "app_process_absent": true
+  }
+}

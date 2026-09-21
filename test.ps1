@@ -1,4 +1,4 @@
-param([string]$Jdk = $env:JAVA_HOME, [string]$FactoryJson)
+param([string]$Jdk = $env:JAVA_HOME, [string]$FactoryJson, [string]$Python = 'python')
 $ErrorActionPreference = 'Stop'
 if (!$Jdk) { throw 'Provide -Jdk or JAVA_HOME.' }
 $output = Join-Path $PSScriptRoot 'build\host-tests'
@@ -9,3 +9,5 @@ $extra = @()
 if ($FactoryJson) { $extra = @($FactoryJson, "$PSScriptRoot\sourceprofiles") }
 & "$Jdk\bin\java.exe" -cp $output local.nova.diagnostic.ProfilePayloadTest @extra
 if ($LASTEXITCODE -ne 0) { throw 'Profile reconstruction tests failed' }
+& $Python "$PSScriptRoot\tests\test_installer.py"
+if ($LASTEXITCODE -ne 0) { throw 'Installer regression tests failed' }

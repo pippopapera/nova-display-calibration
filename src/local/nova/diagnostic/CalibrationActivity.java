@@ -186,9 +186,7 @@ public final class CalibrationActivity extends Activity {
         button.setAllCaps(false);
         button.setMaxLines(2);
         button.setAutoSizeTextTypeUniformWithConfiguration(12, 16, 1, android.util.TypedValue.COMPLEX_UNIT_SP);
-        button.setFilterTouchesWhenObscured(true);
-        button.setOnTouchListener((v, event) ->
-                (event.getFlags() & android.view.MotionEvent.FLAG_WINDOW_IS_PARTIALLY_OBSCURED) != 0);
+        protectButton(button);
         button.setTextColor(new android.content.res.ColorStateList(
                 new int[][]{new int[]{-android.R.attr.state_enabled}, new int[]{}},
                 new int[]{AeroTheme.MUTED, 0xffffffff}));
@@ -212,7 +210,17 @@ public final class CalibrationActivity extends Activity {
                 new int[]{0x88678896, AeroTheme.INK});
     }
 
+    private void protectButton(Button button) {
+        button.setFilterTouchesWhenObscured(true);
+        button.setOnTouchListener((v, event) ->
+                (event.getFlags() & android.view.MotionEvent.FLAG_WINDOW_IS_PARTIALLY_OBSCURED) != 0);
+    }
+
     private void runAction(Button selected, Runnable action) {
+        runAction(selected, action, true);
+    }
+
+    private void runAction(Button selected, Runnable action, boolean offerSaturationReset) {
         if (!statusVerified || !BUSY.compareAndSet(false, true)) return;
         actionRunning = true;
         setButtonsEnabled(false);
@@ -224,18 +232,54 @@ public final class CalibrationActivity extends Activity {
                 android.util.Log.e("NovaCalibration", "Profile operation failed", error);
                 saveOperation("operation_error", String.valueOf(error));
                 String detail = String.valueOf(error) + " " + String.valueOf(error.getCause());
-                setStatus(detail.contains("odin_saturation_not_100")
-                        ? getString(R.string.error_saturation)
+                boolean needsReset = detail.contains("saturation_setup_required")
+                        || detail.contains("color_transform_active");
+                setStatus(detail.contains("saturation_setup_required")
+                        ? getString(R.string.error_saturation_boot)
+                        : detail.contains("color_transform_active")
+                            ? getString(R.string.error_color_transform)
+                        : detail.contains("color_state_unavailable")
+                            ? getString(R.string.error_color_state)
                         : detail.contains("firmware_mismatch")
                             ? getString(R.string.error_firmware)
                         : detail.contains("foreign_override")
                             ? getString(R.string.error_foreign)
                             : getString(R.string.error_save));
+                if (needsReset && offerSaturationReset) {
+                    runOnUiThread(() -> {
+                        if (isFinishing() || isDestroyed()) return;
+                        android.app.AlertDialog dialog = new android.app.AlertDialog.Builder(this)
+                                .setTitle(R.string.saturation_reset_title)
+                                .setMessage(R.string.saturation_reset_message)
+                                .setNegativeButton(R.string.cancel, null)
+                                .setPositiveButton(R.string.saturation_reset_apply, (prompt, which) ->
+                                        runAction(selected, () -> {
+                                            resetSaturation();
+                                            action.run();
+                                        }, false))
+                                .create();
+                        dialog.setOnShowListener(prompt -> {
+                            protectButton(dialog.getButton(android.app.AlertDialog.BUTTON_POSITIVE));
+                            protectButton(dialog.getButton(android.app.AlertDialog.BUTTON_NEGATIVE));
+                        });
+                        dialog.show();
+                    });
+                }
             } finally {
                 BUSY.set(false);
                 runOnUiThread(() -> { actionRunning = false; setButtonsEnabled(true); });
             }
         });
+    }
+
+    private void resetSaturation() {
+        try {
+            ensurePServer();
+            String result = runInstaller(stageInstaller(), "reset-saturation");
+            saveOperation("native_reset_saturation", result);
+            if (!result.contains("NOVA_NATIVE_SATURATION_RESET=1"))
+                throw new IllegalStateException("Saturation reset failed: " + result);
+        } catch (Exception error) { throw new RuntimeException(error); }
     }
 
     private void apply(String profileId) {
@@ -359,7 +403,7 @@ public final class CalibrationActivity extends Activity {
     }
 
     private String runInstaller(File helper, String action) throws Exception {
-        if (!action.matches("status|restore|apply (gamma22|srgb)"))
+        if (!action.matches("status|restore|reset-saturation|apply (gamma22|srgb)"))
             throw new IllegalArgumentException("Unsupported installer action");
         return root("sh '" + helper.getAbsolutePath() + "' " + action);
     }

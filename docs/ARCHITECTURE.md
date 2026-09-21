@@ -63,6 +63,8 @@ These match the previously measured profiles byte for byte. A failed checksum pr
 
 Repeated selection of the configured profile preserves brightness and does not create a new restart requirement. Restore is limited to a recognized profile owned by this app. It remains available after a firmware mismatch so the old owned override can be removed.
 
+Version 1.0.1 checks both the saved saturation property and the internal display's current compositor transform. When needed, a separate user-confirmed operation sets current/startup saturation to the canonical `1.0`, verifies neutrality, and retries the selected profile. Cancelling makes no changes. This reset does not change the panel profile or brightness, disable color filters, or rewrite other apps' preferences. Restore removes the panel profile and leaves this explicit saturation reset in place. [Saturation behavior and limitations](SATURATION.md).
+
 ## Limits of the safeguards
 
 Each file replacement is atomic, but the override and state are separate files. Handled errors trigger rollback; arbitrary power loss or process termination between writes is not a proven crash-atomic transaction. An interrupted operation can leave a stale lock or inconsistent state requiring recovery. Do not remove unknown files to bypass these checks.

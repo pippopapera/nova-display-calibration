@@ -70,7 +70,7 @@ class InstallerTest(unittest.TestCase):
         mocks = {
             "id": "echo 0",
             "getprop": 'case "$1" in ro.build.display.id) cat "$FIXTURE/build";; persist.sys.sf.color_saturation) [ ! -f "$FIXTURE/fail-getprop" ] || exit 1; cat "$FIXTURE/saturation";; *) exit 1;; esac',
-            "dumpsys": '[ "$1" = -t ] && [ "$2" = 5 ] && [ "$3" = SurfaceFlinger ] || exit 1\n[ ! -f "$FIXTURE/fail-dumpsys" ] || exit 1\ncat "$FIXTURE/surfaceflinger"',
+            "dumpsys": '[ "$1" = -t ] && [ "$2" = 5 ] && [ "$3" = SurfaceFlinger ] || exit 1\n[ ! -f "$FIXTURE/fail-dumpsys" ] || exit 1\ncat "$FIXTURE/surfaceflinger"\n[ ! -f "$FIXTURE/partial-dumpsys" ]',
             "setprop": '[ "$1" = persist.sys.sf.color_saturation ] && [ "$2" = 1.0 ] || exit 1\n[ ! -f "$FIXTURE/fail-setprop" ] || exit 1\nprintf "%s" "$2" > "$FIXTURE/saturation"',
             "service": '[ "$*" = "call SurfaceFlinger 1022 f 1.0" ] || exit 1\n[ ! -f "$FIXTURE/fail-service" ] || exit 1\n[ -f "$FIXTURE/keep-filter" ] || /bin/cp "$FIXTURE/identity" "$FIXTURE/surfaceflinger"\necho "Result: Parcel(NULL)"',
             "sleep": "exit 0",
@@ -190,6 +190,35 @@ class InstallerTest(unittest.TestCase):
                 self.run_installer("apply", "gamma22", error="color_state_unavailable")
         self.put("surfaceflinger", display())
         self.put("fail-dumpsys", "")
+        self.run_installer("apply", "gamma22", error="color_state_unavailable")
+
+    def test_large_dump_is_streamed_and_only_internal_matrix_is_used(self):
+        # Host shells may have a builtin printf without Android's external-command
+        # argument limit. Model that limit so the old implementation fails here too.
+        script = (self.root / "installer.sh").read_text(encoding="utf8")
+        guard = '''printf() {
+    for argument in "$@"; do
+        [ "${#argument}" -lt 131072 ] || { echo 'printf: Argument list too long' >&2; return 1; }
+    done
+    command printf "$@"
+}
+'''
+        self.put("installer.sh", script.replace("set -eu\n", "set -eu\n" + guard, 1))
+        padding = "unrelated layer diagnostics " + "x" * 1000 + "\n"
+        for matrix, error in ((IDENTITY, None), (MODIFIED, "color_transform_active")):
+            with self.subTest(matrix=matrix):
+                self.put("surfaceflinger", padding * 1024 + display(matrix) +
+                         display(MODIFIED, internal=False) + padding * 1024)
+                out = self.run_installer("apply", "gamma22", error=error)
+                self.assertNotIn("unrelated layer", out)
+                self.assertLess(len(out), 2048)
+        self.put("surfaceflinger", display("x" * 200000))
+        self.run_installer("apply", "gamma22", error="color_state_unavailable")
+
+    def test_partial_failed_dump_with_valid_matrix_is_rejected(self):
+        self.put("partial-dumpsys", "")
+        self.run_installer("apply", "gamma22", error="color_state_unavailable")
+        self.put("surfaceflinger", display() + "NOVA_SF_DUMP_COMPLETE\n")
         self.run_installer("apply", "gamma22", error="color_state_unavailable")
 
     def test_status_and_restore_remain_available_when_color_check_fails(self):

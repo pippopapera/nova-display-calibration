@@ -45,18 +45,32 @@ read_color_state() {
     printf 'NOVA_SATURATION_PERSISTENT_STATUS=%s\n' "$saturation_state"
 
     transform_state=unavailable
-    # Bounded read. Do not store the full dump (it contains unrelated app details).
-    if sf_dump=$(dumpsys -t 5 SurfaceFlinger 2>/dev/null); then
-        transform=$(printf '%s\n' "$sf_dump" | LC_ALL=C awk '
+    # Stream the dump: Android printf is external and cannot accept a large dump
+    # as one argument. Keep only one bounded matrix, never unrelated app details.
+    # The final marker proves dumpsys succeeded, including after partial output.
+    if transform=$(
+        { if dumpsys -t 5 SurfaceFlinger 2>/dev/null; then
+            printf '\nNOVA_SF_DUMP_COMPLETE\n'
+          else
+            printf '\nNOVA_SF_DUMP_FAILED\n'
+          fi; } | LC_ALL=C awk '
+            /^NOVA_SF_DUMP_COMPLETE$/ { complete=1; next }
+            { complete=0 }
             /^Display / { internal=0 }
             /layerFilter=.*toInternalDisplay=true/ { internal=1 }
             internal && /^[[:space:]]*colorTransformMatrix=/ {
+                count++
+                if (count != 1 || length($0) > 1024) { invalid=1; next }
                 sub(/^[[:space:]]*colorTransformMatrix=/, "")
                 gsub(/[[:space:]]/, "")
-                print
+                matrix=$0
             }
-        ')
-        unset sf_dump
+            END {
+                if (!complete || invalid || count != 1) exit 1
+                print matrix
+            }
+        '
+    ); then
         # This is the internal display only, not an external/virtual display or layer.
         # The firmware prints matrix components to three decimal places.
         transform=$(printf '%s' "$transform" | sed 's/-0\.000/0.000/g')

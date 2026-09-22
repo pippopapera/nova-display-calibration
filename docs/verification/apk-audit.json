@@ -1,7 +1,7 @@
 {
   "apk": "nova-calibration.apk",
-  "sha256": "7c0197aa724f620134e0cb5efdba28dd55adc630ac678bf733cd6d6d013b920d",
-  "bytes": 78998,
+  "sha256": "09d586715ca923654bd27b4115c885281656fc546a15716a4a2b811bb29c4755",
+  "bytes": 78999,
   "permissions": [],
   "debuggable": false,
   "backup": false,
@@ -42,10 +42,10 @@
     "Llocal/nova/diagnostic/R;"
   ],
   "assets": {
-    "nova-system-profile.sh": "02bf0620906c7ec408388dd08de977262e855a7d242c4238d217e75bac8e9f9f",
-    "gamma22.npatch": "9a4b0907250cc58d5c2272e72bcbc81e57188b4b5ea259ece2c4144d0beae04e",
+    "nova-system-profile.sh": "b57d9bb1b0d8f349184bc82daa3bc639c7788f1aed445e4ba96d6f33ce149868",
     "profile-manifest.json": "8d3ff83b5d0a759f5675606a52c1a13cc0df91926570353b6a8f05b31677ffe4",
-    "srgb.npatch": "2b4375e4f4f4269eaa9060043d08a961abb50b31966a587e2661fe28492bf4b0"
+    "srgb.npatch": "2b4375e4f4f4269eaa9060043d08a961abb50b31966a587e2661fe28492bf4b0",
+    "gamma22.npatch": "9a4b0907250cc58d5c2272e72bcbc81e57188b4b5ea259ece2c4144d0beae04e"
   },
   "default_language": "en",
   "translations": {

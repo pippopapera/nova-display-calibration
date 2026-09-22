@@ -1,0 +1,60 @@
+{
+  "version": "1.0.2",
+  "version_code": 7,
+  "date": "2026-09-22",
+  "status": "passed",
+  "issue": "https://github.com/pippopapera/nova-display-calibration/issues/3",
+  "scope": "One supported physical Nova. Synthetic Android-shell parser checks, signed-APK UI and hardware register checks. No new optical measurements.",
+  "firmware": "RPN_V1.0.0.436_20260722_083524_user",
+  "apk_sha256": "09d586715ca923654bd27b4115c885281656fc546a15716a4a2b811bb29c4755",
+  "apk_bytes": 78999,
+  "certificate_sha256": "f6c76258cf877435f5f1e453569ec131f92f6c284f7fa99783360a7aa10cca34",
+  "signature_v2_verified": true,
+  "signature_v3_verified": true,
+  "in_place_update_from_1_0_1": true,
+  "installed_apk_byte_identical": true,
+  "host_decoder_checks": 21,
+  "host_installer_test_methods": 12,
+  "host_evidence": "release-1.0.2-host-tests.txt",
+  "android_parser_cases": 9,
+  "android_parser_evidence": "release-1.0.2-android-parser.json",
+  "final_apk_full_reboots": 3,
+  "profiles": [
+    {
+      "profile": "srgb",
+      "full_reboot_verified": true,
+      "hardware_evidence": "release-1.0.2-srgb-drm.verification.json"
+    },
+    {
+      "profile": "original",
+      "full_reboot_verified": true,
+      "hardware_evidence": "release-1.0.2-original-drm.verification.json"
+    },
+    {
+      "profile": "gamma22",
+      "full_reboot_verified": true,
+      "hardware_evidence": "release-1.0.2-gamma22-drm.verification.json"
+    }
+  ],
+  "live_0_8_with_saved_1_0_detected": true,
+  "reset_cancel_preserves_state": true,
+  "confirmed_reset_and_reapply_succeeds": true,
+  "unchanged_profile_needs_no_reboot": true,
+  "force_stop_sleep_wake_app_absent": true,
+  "profile_assets_identical_to_1_0_1": true,
+  "final_state": {
+    "gamma22": true,
+    "saturation_restored": true,
+    "screen_timeout_restored": true,
+    "lock_setting_restored": true,
+    "temporary_tools_removed": true,
+    "locale_restored": true,
+    "display_asleep": true,
+    "app_process_absent": true
+  },
+  "limitations": [
+    "The issue reporter's own device has not yet been retested with 1.0.2.",
+    "The large-report reproduction uses synthetic report contents under the real Android shell; normal app/reboot checks use the real display service.",
+    "No new optical, latency, FPS or battery measurements."
+  ]
+}

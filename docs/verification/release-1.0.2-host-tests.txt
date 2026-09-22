@@ -1,0 +1,36 @@
+PASS synthetic byte-exact reconstruction
+PASS wrong factory
+PASS wrong final checksum
+PASS truncated header
+PASS wrong magic
+PASS wrong field count
+PASS unexpected field index
+PASS too many operations
+PASS unknown operation
+PASS negative copy offset
+PASS copy outside input
+PASS negative literal size
+PASS oversized literal
+PASS truncated operation
+PASS trailing data
+PASS changed calibration value
+PASS oversized patch
+PASS bounded factory stream
+PASS bounded patch stream
+PASS measured gamma22 939485 bytes SHA256 c6e20079ef58220960e9511d5641bc02f1bcfb0f90c5bb0a842e5b2ed00c9afd
+PASS measured srgb 939629 bytes SHA256 8be527253edcc712006e73a26cbadd4f3aa1ade3bd8d2d00ae38587b3f393b25
+Passed: 21
+test_default_and_equivalent_neutral_values (__main__.InstallerTest.test_default_and_equivalent_neutral_values) ... ok
+test_external_display_and_layer_do_not_override_internal_check (__main__.InstallerTest.test_external_display_and_layer_do_not_override_internal_check) ... ok
+test_invalid_property_and_read_failure (__main__.InstallerTest.test_invalid_property_and_read_failure) ... ok
+test_large_dump_is_streamed_and_only_internal_matrix_is_used (__main__.InstallerTest.test_large_dump_is_streamed_and_only_internal_matrix_is_used) ... ok
+test_live_adjustment_rejected_with_neutral_or_default_startup (__main__.InstallerTest.test_live_adjustment_rejected_with_neutral_or_default_startup) ... ok
+test_non_neutral_startup_values_rejected_even_with_identity (__main__.InstallerTest.test_non_neutral_startup_values_rejected_even_with_identity) ... ok
+test_partial_failed_dump_with_valid_matrix_is_rejected (__main__.InstallerTest.test_partial_failed_dump_with_valid_matrix_is_rejected) ... ok
+test_reset_errors_and_remaining_filters_never_apply_a_profile (__main__.InstallerTest.test_reset_errors_and_remaining_filters_never_apply_a_profile) ... ok
+test_reset_is_explicit_and_preserves_profile_state_and_brightness (__main__.InstallerTest.test_reset_is_explicit_and_preserves_profile_state_and_brightness) ... ok
+test_status_and_restore_remain_available_when_color_check_fails (__main__.InstallerTest.test_status_and_restore_remain_available_when_color_check_fails) ... ok
+test_transaction_and_guards (__main__.InstallerTest.test_transaction_and_guards) ... ok
+test_unreadable_missing_duplicate_and_malformed_transform_fail_closed (__main__.InstallerTest.test_unreadable_missing_duplicate_and_malformed_transform_fail_closed) ... ok
+Ran 12 tests in 33.049s
+OK

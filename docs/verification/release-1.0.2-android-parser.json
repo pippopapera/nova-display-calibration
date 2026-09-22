@@ -1,0 +1,69 @@
+{
+  "scope": "Synthetic diagnostic text on the physical Nova Android shell; no display settings changed.",
+  "installer_sha256": "b57d9bb1b0d8f349184bc82daa3bc639c7788f1aed445e4ba96d6f33ce149868",
+  "cases": [
+    {
+      "case": "legacy_large",
+      "input_bytes": 2093258,
+      "expected": "Argument list too long",
+      "exit_code": 1,
+      "passed": true
+    },
+    {
+      "case": "large_identity",
+      "input_bytes": 2093258,
+      "expected": "CHECK_OK",
+      "exit_code": 0,
+      "passed": true
+    },
+    {
+      "case": "large_modified",
+      "input_bytes": 2093258,
+      "expected": "NOVA_NATIVE_ERROR=color_transform_active",
+      "exit_code": 1,
+      "passed": true
+    },
+    {
+      "case": "large_duplicate",
+      "input_bytes": 2093460,
+      "expected": "NOVA_NATIVE_ERROR=color_state_unavailable",
+      "exit_code": 1,
+      "passed": true
+    },
+    {
+      "case": "oversized_matrix",
+      "input_bytes": 200100,
+      "expected": "NOVA_NATIVE_ERROR=color_state_unavailable",
+      "exit_code": 1,
+      "passed": true
+    },
+    {
+      "case": "partial_failure",
+      "input_bytes": 202,
+      "expected": "NOVA_NATIVE_ERROR=color_state_unavailable",
+      "exit_code": 1,
+      "passed": true
+    },
+    {
+      "case": "partial_marker",
+      "input_bytes": 224,
+      "expected": "NOVA_NATIVE_ERROR=color_state_unavailable",
+      "exit_code": 1,
+      "passed": true
+    },
+    {
+      "case": "missing_matrix",
+      "input_bytes": 2093056,
+      "expected": "NOVA_NATIVE_ERROR=color_state_unavailable",
+      "exit_code": 1,
+      "passed": true
+    },
+    {
+      "case": "no_final_newline",
+      "input_bytes": 201,
+      "expected": "CHECK_OK",
+      "exit_code": 0,
+      "passed": true
+    }
+  ]
+}

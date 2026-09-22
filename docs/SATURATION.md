@@ -1,5 +1,7 @@
 # Saturation setup and troubleshooting
 
+If version 1.0.1 reports **Could not verify the display color settings** and the operation details include `printf: Argument list too long`, update to **1.0.2**. This was an app bug when Android returned a large display diagnostic report, even with saturation correctly set to 100%. Install the update over the existing app, select your profile, and restart if requested. No OdinTools reinstall or manual saturation reset is needed.
+
 Version 1.0.1 replaces the misleading “Set OdinTools saturation to 100%” rejection with a checked, optional reset inside Nova Calibration. OdinTools is not required.
 
 1. Install the update over version 1.0.0 and select Gamma 2.2 or sRGB.
@@ -27,5 +29,7 @@ Sources: [OdinTools saturation setter](https://github.com/langerhans/OdinTools/b
 - Keeps **Restore original** available even if the saturation check fails.
 
 The live check uses the internal display's matrix in a bounded SurfaceFlinger dump. That dump rounds components to three decimal places; it is a software safeguard, not an optical measurement or a guarantee against later changes by another app. External display and individual layer matrices are not substituted for the internal display's state. Missing, ambiguous or malformed output stops installation.
+
+Starting with 1.0.2, the report is streamed into the parser instead of passed as a large command argument. Only one length-limited internal matrix is retained. A completion marker distinguishes a successful report from partial output followed by an error or timeout; failed reports remain blocked.
 
 Press and hold the status text for operation details. The log reports `NOVA_SATURATION_PERSISTENT`, `NOVA_SATURATION_PERSISTENT_STATUS` and `NOVA_COLOR_TRANSFORM_STATUS`. It does not save the full SurfaceFlinger dump or unrelated application details.
